@@ -246,8 +246,9 @@
     <Content Include="Content\fonts\glyphicons.social.pro\glyphicons-social-regular.svg" />
     <Content Include="Content\images\alfa512ks%40mail.ru.jpg" />
     <Content Include="Content\images\English.jpg" />
+    <Content Include="Content\img\bar-orig.jpg" />
+    <Content Include="Content\img\bar.jpg" />
     <Content Include="Content\img\bg-blog.jpg" />
-    <Content Include="Content\img\bg-parallax-section.jpg" />
     <Content Include="Content\img\bg-s1-cost.jpg" />
     <Content Include="Content\img\bg-s1-enroll-lesson-min.jpg" />
     <Content Include="Content\img\bg-s1-teachers.jpg" />
@@ -260,6 +261,7 @@
     <Content Include="Content\img\bm-min.jpg" />
     <Content Include="Content\img\close.jpg" />
     <Content Include="Content\img\close.png" />
+    <Content Include="Content\img\crap.png" />
     <Content Include="Content\img\creditCard.png" />
     <Content Include="Content\img\darts.gif" />
     <Content Include="Content\img\darts.png" />
@@ -283,8 +285,11 @@
     <Content Include="Content\img\france.jpg" />
     <Content Include="Content\img\fullface-white.png" />
     <Content Include="Content\img\fullface.png" />
+    <Content Include="Content\img\gear.png" />
     <Content Include="Content\img\germany.jpg" />
     <Content Include="Content\img\green-cubed-vinograd-chashka.jpg" />
+    <Content Include="Content\img\hall-orig.jpg" />
+    <Content Include="Content\img\hall.jpg" />
     <Content Include="Content\img\happy-sailors-min.jpg" />
     <Content Include="Content\img\happypeople.gif" />
     <Content Include="Content\img\happypeople.png" />
@@ -306,6 +311,8 @@
     <Content Include="Content\img\icon-inf-dark.png" />
     <Content Include="Content\img\icon-internet.png" />
     <Content Include="Content\img\icon-language.png" />
+    <Content Include="Content\img\icon-mouse-black.png" />
+    <Content Include="Content\img\icon-mouse-blue.png" />
     <Content Include="Content\img\icon-mouse-cost.png" />
     <Content Include="Content\img\icon-mouse-r.png" />
     <Content Include="Content\img\icon-mouse.png" />
@@ -321,6 +328,8 @@
     <Content Include="Content\img\it-min.png" />
     <Content Include="Content\img\Italy.png" />
     <Content Include="Content\img\kamni-cvet-bereg-more.jpg" />
+    <Content Include="Content\img\lamp-logo-64.png" />
+    <Content Include="Content\img\led.png" />
     <Content Include="Content\img\logo-1024.png" />
     <Content Include="Content\img\logo-128.png" />
     <Content Include="Content\img\logo-256.png" />
@@ -340,7 +349,6 @@
     <Content Include="Content\img\sp-min.jpg" />
     <Content Include="Content\img\spain.jpg" />
     <Content Include="Content\img\spec-eng-min.jpg" />
-    <Content Include="Content\img\start-section-backgroung.jpg" />
     <Content Include="Content\img\veselyie-studentyi-gay-students-min.jpg" />
     <Content Include="Content\img\zhako-popugay-ptica.jpg" />
     <Content Include="Content\main.css" />
