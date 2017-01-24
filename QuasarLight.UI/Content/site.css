@@ -2,57 +2,62 @@
 
 @font-face {
     font-family: Raleway-Light;
-    src: url(../fonts/Raleway-Light_0.ttf);
+    src: url(/Content/fonts/Raleway-Light_0.ttf);
 }
 
 @font-face {
     font-family: Raleway-Black;
-    src: url(../fonts/Raleway-Black_0.ttf);
+    src: url(/Content/fonts/Raleway-Black_0.ttf);
 }
 
 @font-face {
     font-family: Raleway-Bold;
-    src: url(../fonts/Raleway-Bold_0.ttf);
+    src: url(/Content/fonts/Raleway-Bold_0.ttf);
 }
 
 @font-face {
     font-family: Raleway-ExtraLight;
-    src: url(../fonts/Raleway-ExtraLight_0.ttf);
+    src: url(/Content/fonts/Raleway-ExtraLight_0.ttf);
 }
 
 @font-face {
     font-family: KelsonSans;
-    src: url(../fonts/KelsonSans.ttf);
+    src: url(/Content/fonts/KelsonSans.ttf);
 }
 
 @font-face {
     font-family: Raleway-Medium;
-    src: url(../fonts/Raleway-Medium_0.ttf);
+    src: url(/Content/fonts/Raleway-Medium_0.ttf);
 }
 
 @font-face {
     font-family: Raleway-Regular;
-    src: url(../fonts/Raleway-Regular_0.ttf);
+    src: url(/Content/fonts/Raleway-Regular_0.ttf);
 }
 
 @font-face {
     font-family: Raleway-SemiBold;
-    src: url(../fonts/Raleway-SemiBold_0.ttf);
+    src: url(/Content/fonts/Raleway-SemiBold_0.ttf);
 }
 
 @font-face {
     font-family: CentSchbook_Win95Bt;
-    src: url(../fonts/CentSchbook_Win95Bt.ttf);
+    src: url(/Content/fonts/CentSchbook_Win95Bt.ttf);
 }
 
 @font-face {
     font-family: Classica_One;
-    src: url(../fonts/Classica_One.ttf);
+    src: url(/Content/fonts/Classica_One.ttf);
 }
 
 @font-face {
     font-family: Christmas_ScriptC;
-    src: url(../fonts/Christmas_ScriptC.ttf);
+    src: url(/Content/fonts/Christmas_ScriptC.ttf);
+}
+
+@font-face {
+    font-family: FlashRogersLaser;
+    src: url(/Content/fonts/FlashRogersLaser.ttf);
 }
 
 html {
@@ -64,7 +69,7 @@ body {
     overflow-x: hidden;
     width: 100%;
     height: 100%;
-    color: #fff;
+    /*color: #fff;*/
 }
 
 .nicescroll-cursors {
@@ -340,7 +345,8 @@ html {
     margin-top: -60px;
     margin: 0 auto;
     text-align: center;
-    color: #FF1122;
+    color: #2685df;
+    /*color: #FF1122;*/
 }
 
 .icon-scroll p {
@@ -799,18 +805,18 @@ li.enroll {
 }
 
     .inf-block h1 {
-        font-family: Christmas_ScriptC;
+        font-family: FlashRogersLaser;
         letter-spacing: 2px;
-        color: #FF1122;
+        color: #000;
         /*-webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #f77807;*/
         font-size: 90px;
     }
 
     .inf-block h2 {
-        font-family: Christmas_ScriptC;
+        font-family: FlashRogersLaser;
         letter-spacing: 2px;
-        color: #FF1122;
+        color: #000;
         /*-webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #f77807;*/
         font-size: 50px;
@@ -822,7 +828,7 @@ li.enroll {
         letter-spacing: 1px;
         font-family: CentSchbook_Win95Bt;
         line-height: 1.3em;
-        color: #FF1122;
+        color: #000;
         /*-webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #fff;*/
         font-size: 30px;
@@ -1020,11 +1026,11 @@ li.enroll {
 
 /* landing-page */
 .cd-fixed-bg.cd-bg-1 {
-    background-image: url("../Content/img/start-section-backgroung.jpg");
+    background-image: url("../Content/img/hall.jpg");
 }
 
 .cd-fixed-bg.cd-bg-2 {
-    background-image: url("../Content/img/bg-parallax-section.jpg");
+    background-image: url("../Content/img/bar.jpg");
     height: 440px;
     background-attachment: fixed;
 }
@@ -3922,7 +3928,7 @@ img.arrow_r {
 }
 
 .end p > strong {
-    color: #AB5F1C;
+    color: #2180da;
     font-weight: normal;
 }
 

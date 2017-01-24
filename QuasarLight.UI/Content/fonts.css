@@ -1,36 +1,40 @@
 @font-face {
 	font-family: Raleway-Light;
-	src: url(../font/Raleway-Light.ttf);
+	src: url(/Content/fonts/Raleway-Light_0.ttf);
 }
-@font-face {
+/*@font-face {
 	font-family: Raleway-ExtraBold;
-	src: url(../font/Raleway-ExtraBold.ttf);
-}
+	src: url(/Content/fonts/Raleway-ExtraBold_0.ttf);
+}*/
 @font-face {
 	font-family: Raleway-Regular;
-	src: url(../font/Raleway-Regular.ttf);
+	src: url(/Content/fonts/Raleway-Regular_0.ttf);
 }
 @font-face {
 	font-family: Raleway-SemiBold;
-	src: url(../font/Raleway-SemiBold.ttf);
+	src: url(/Content/fonts/Raleway-SemiBold_0.ttf);
 }
 @font-face {
 	font-family: Raleway-Bold;
-	src: url(../font/Raleway-Bold.ttf);
+	src: url(/Content/fonts/Raleway-Bold_0.ttf);
 }
-@font-face {
+/*@font-face {
 	font-family: KelsonSans;
-	src: url(../font/KelsonSans.otf);
+	src: url(/Content/fonts/KelsonSans.otf);
 }
 @font-face {
 	font-family: Raleway-ExtraLight;
-	src: url(../font/Raleway-ExtraLight.ttf);
+	src: url(/Content/fonts/Raleway-ExtraLight.ttf);
+}*/
+@font-face {
+	font-family: Raleway-Medium;
+	src: url(/Content/fonts/Raleway-Medium_0.ttf);
 }
 @font-face {
 	font-family: Raleway-Medium;
-	src: url(../font/Raleway-Medium.ttf);
+	src: url(/Content/fonts/CentSchbook_Win95Bt.ttf);
 }
 @font-face {
-	font-family: Raleway-Medium;
-	src: url(../font/CentSchbook_Win95Bt.ttf);
+    font-family: FlashRogersLaser;
+    src: url(/Content/fonts/FlashRogersLaser.ttf);
 }

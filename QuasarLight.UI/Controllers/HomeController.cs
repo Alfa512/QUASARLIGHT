@@ -15,10 +15,10 @@ namespace QuasarLight.UI.Controllers
         //    return View();
         //}
 
-        //public ActionResult OrderLesson()
-        //{
-        //    return View();
-        //}
+        public ActionResult About()
+        {
+            return View();
+        }
 
         //public ActionResult Costs()
         //{

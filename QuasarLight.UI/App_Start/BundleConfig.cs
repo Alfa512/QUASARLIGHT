@@ -10,6 +10,9 @@ namespace QuasarLight.UI
                       "~/Content/bootstrap.css",
                       "~/Content/bootstrap.min.css",
                       "~/Content/animate.css",
+                      "~/Content/main.css",
+                      "~/Content/plugins.css",
+                      "~/Content/themes.css",
                       "~/Content/site.css"
                       ));
 
@@ -76,7 +79,9 @@ namespace QuasarLight.UI
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/layout.bottom").Include(
-                                "~/Scripts/global.services.js"
+                "~/Scripts/plugins.js",
+                "~/Scripts/app.js",
+                "~/Scripts/global.services.js"
                 ));
 
             bundles.Add(new ScriptBundle("~/bundles/index").Include(
