@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+@{
+    Layout = null;
+}
+@using Microsoft.Ajax.Utilities
+@model string
+
+<head>
+    <title>Dialogue Online</title>
+
+    <style type="text/css">
+        body {
+            border: 1px;
+            border-color: #cccccc;
+        }
+
+        .title {
+            font-size: 16px;
+        }
+
+        .navbar-default {
+            background-repeat: no-repeat;
+            height: 80px;
+            width: auto;
+        }
+
+        .normal-font {
+            font-size: 15px;
+        }
+
+        .small-font {
+            font-size: 12px;
+        }
+
+        .end {
+            background-color: #161616;
+            color: #686868;
+            padding: 15px 0 15px 0;
+            left: 0;
+            right: 0;
+        }
+
+        .end span {
+            text-align: center;
+            font-family: Raleway-Bold, sans-serif;
+            font-size: 12px !important;
+            margin: 0 auto;
+            display: block;
+            width: 300px;
+        }
+
+        .skype-data {
+            float: left;
+            margin: -21px 0 0 40px;
+        }
+
+        .email-data {
+            float: right;
+            margin: -21px 40px 0 0;
+        }
+
+        .skype-data, .email-data {
+            font-family: Raleway-SemiBold, sans-serif;
+        }
+
+        .end p > strong {
+            color: #ab5f1c;
+            font-weight: normal;
+        }
+
+        .main {
+            margin-top: 20px;
+        }
+
+        .skype {
+            color: #0067cc;
+        }
+
+        .email {
+            color: #cf7f1c;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+        <a class="navbar-brand logo" href="http://dialogue-online.ru"><img src="http://dialogue-online.ru/Content/img/email-top-s.png" /></a>
+    </nav>
+    <div class="main">
+        <div class="normal-font">
+            @if (Model.IsNullOrWhiteSpace())
+            {
+                <p class="title">Здравствуйте!</p>
+            }
+            else
+            {
+                <p class="title">Здравствуйте, @Model!</p>
+            }
+            <p>Спасибо, что выбрали нас!</p>
+
+            <p>Реквизиты:</p>
+            ОАО "КРАЙИНВЕСТБАНК" Г.КРАСНОДАР<br />
+            БИК 040349516<br />
+            Корр.счет 30101.810.5.00000000516<br />
+            Получатель: Дрозд Юлия Александровна (ИП)<br />
+            Счет получателя 40802.810.9.21030000079<br />
+            <br />
+            При оформлении перевода просьба указать в бланке Ваши ФИО.<br />
+            Если у Вас есть какие-либо вопросы, пожалуйста, задавайте!
+            <p>Успехов в обучении!</p>
+            <p>-</p>
+            С уважением,<br />
+            команда онлайн-школы "Dialogue"
+        </div>
+        <br />
+        <div class="small-font">
+            Dialogue, онлайн-школа иностранных языков, <a href="http://dialogue-online.ru">www.dialogue-online.ru</a><br />
+            Skype менеджера школы: <a class="skype">mydialogueschool</a><br />
+            E-mail: <a class="email">mydialogueschool@gmail.com</a>
+        </div>
+    </div>
+
+</body>

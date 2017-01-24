@@ -1,0 +1,56 @@
+﻿@{
+    Layout = null;
+
+    var id = Model != null ? Model.Id : "0";
+    var fullName = Model != null ? Model.FullName ?? "" : "";
+    var email = Model != null ? Model.Email ?? "" : "";
+    var skype = Model != null ? Model.Skype ?? "" : "";
+}
+@model QuasarLight.UI.Models.StudentVm
+
+    <div class="modal-dialog " role="document">
+        <div class="modal-content billsSt">
+            <div id="editStMessage" class="hidden"></div>
+            @using (Ajax.BeginForm("EditStudent", null, new AjaxOptions {HttpMethod = "Post"}, new {Id = "editStAjaxForm"}))
+            {
+                <div class="modal_header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="timetable-text head-add-form">Редактировать студента</h4>
+                </div>
+                <div id="edit-student-inputs" class="col-add col-md-12">
+                    <input id="eStId" type="hidden" name="Id" value="@id"/>
+                    @Html.ValidationMessageFor(m => m.FullName)
+                    @Html.TextBoxFor(m => m.FullName, new {Id = "eStFullName", Name = "FullName", Class = "addInf", Placeholder = "Имя", value = fullName})
+                    @Html.ValidationMessageFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new {Id = "eStEmail", Name = "Email", Class = "addInf", Placeholder = "E-mail", value = email})
+                    @Html.ValidationMessageFor(m => m.Skype)
+                    @Html.TextBoxFor(m => m.Skype, new {Id = "eStSkype", Name = "Skype", Class = "addInf", Placeholder = "Skype", value = skype})
+                    <p id="pcourses"><b>Курсы:</b>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <select id="slStLenguage" class="addInf" name="slStLenguage">
+                                    @{ Html.RenderAction(@"LanguageSelectList"); }
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                    <p id="pteachers"><b>Преподаватели:</b>
+                    </p>
+                    <table>
+                        <tr>
+                            <td>
+                                <select id="slStTeachers" class="addInf" name="slStTeachers">
+                                    @{ Html.RenderAction(@"TeacherSelectList"); }
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="modal_footer">
+                    <button type="button" class="btn-adds" onclick="editStudentBtn()">Сохранить</button>
+                </div>
+            }
+        </div>
+    </div>

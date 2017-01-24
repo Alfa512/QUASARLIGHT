@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<div class="modal-content no-decor">
+    <div class="trial-modal-top">
+        <button type="button" class="close cl-btn " data-dismiss="modal" aria-label="Close">
+            <img src="~/Content/img/close.jpg" alt="" />
+        </button>
+
+        <h2 class="text-center overlay">ЗАПИСАТЬСЯ НА ВВОДНЫЙ УРОК</h2>
+    </div>
+    <p class="inf-free-lesson">
+        Онлайн-школа "Dialogue" предлагает Вам пройти бесплатный вводный урок (20-30 минут). Для этого заполните заявку и в ближайшее время наши менеджеры свяжутся с Вами и ответят на все Ваши вопросы!
+    </p>
+    @using (Html.BeginForm("AddNewLessonTrial", "Lesson", FormMethod.Post, new { id = "addTrialLessonForm", name = "trialForm", novalidate = "" }))
+    {
+        <div class="forms-dialogue">
+            <div id="inputs-row" class="row">
+                <div class="wide-width extension-col-md-6 col-md-6">
+                    <input id="stFullName" class="form-md" name="stFullName" placeholder="Ваше имя" type="text" ng-class="{ 'has-error' : trialForm.stFullName.$invalid && !trialForm.stFullName.$pristine }" ng-model="stFullName" required />
+                    <input id="stEmail" type="email" name="stEmail" class="form-md" placeholder="Ваш e-mail" ng-class="{ 'has-error' : trialForm.stEmail.$invalid && !trialForm.stEmail.$pristine}" ng-model="stEmail" ng-change="change()" required />
+                    <input id="lsDateTime" type="date" onfocus="changeDateInputAttr()" class="form-md modal-inp-date" name="lsDateTime" placeholder="Дата" min="{{minDate | date:'yyyy-MM-dd'}}" ng-class="{ 'has-error' : trialForm.lsDateTime.$invalid && !trialForm.lsDateTime.$pristine }" ng-model="lsDateTime" required />
+                    <input id="stCity" class="form-md" name="stCity" placeholder="Город" type="text" ng-class="{ 'has-error' : trialForm.stCity.$invalid && !trialForm.stCity.$pristine }" ng-model="stCity" required />
+                </div>
+                <div class="wide-width extension-col-md-6 col-md-6">
+                    <input id="stAge" class="form-md" name="stAge" placeholder="Возраст" type="number" ng-class="{ 'has-error' : trialForm.stAge.$invalid && !trialForm.stAge.$pristine }" ng-model="stAge" ng-min="4" ng-max="100" ng-change="change()" required />
+                    <input id="stSkype" class="form-md" name="stSkype" placeholder="Skype" type="text" ng-class="{ 'has-error' : trialForm.stSkype.$invalid && !trialForm.stSkype.$pristine}" ng-model="stSkype" required />
+                    <input type="hidden" />
+                    <select id="lsLang" class="form-md" name="lsLang">
+                        <option value="Английский">Английский</option>
+                        <option value="Испанский">Испанский</option>
+                        <option value="Итальянский">Итальянский</option>
+                        <option value="Французский">Французский</option>
+                        <option value="Немецкий">Немецкий</option>
+                        <option value="Португальский">Португальский</option>
+                    </select>
+                    <select id="lsLevel" class="form-md" name="lsLevel">
+                        <option value="Нулевой">Нулевой</option>
+                        <option value="Средний">Средний</option>
+                        <option value="Высокий">Высокий</option>
+                    </select>
+                </div>
+                <div class="narrow-width extension-col-md-6 col-md-6">
+                    <input id="stFullName" class="form-md" name="stFullName" placeholder="Ваше имя" type="text" ng-class="{ 'has-error' : trialForm.stFullName.$invalid && !trialForm.stFullName.$pristine }" ng-model="stFullName" required />
+                    <input id="stEmail" type="email" name="stEmail" class="form-md" placeholder="Ваш e-mail" ng-class="{ 'has-error' : trialForm.stEmail.$invalid && !trialForm.stEmail.$pristine}" ng-model="stEmail" ng-change="change()" required />
+                    <input id="lsDateTime" type="date" onfocus="changeDateInputAttr()" class="modal-inp-date form-md" name="lsDateTime" placeholder="Дата" min="{{minDate | date:'yyyy-MM-dd'}}" ng-class="{ 'has-error' : trialForm.lsDateTime.$invalid && !trialForm.lsDateTime.$pristine }" ng-model="lsDateTime" required />
+                    <input id="stCity" class="form-md" name="stCity" placeholder="Город" type="text" ng-class="{ 'has-error' : trialForm.stCity.$invalid && !trialForm.stCity.$pristine }" ng-model="stCity" required />
+                    <input id="stAge" class="form-md" name="stAge" placeholder="Возраст" type="number" ng-class="{ 'has-error' : trialForm.stAge.$invalid && !trialForm.stAge.$pristine }" ng-model="stAge" ng-min="4" ng-max="100" ng-change="change()" required />
+                    <input id="stSkype" class="form-md" name="stSkype" placeholder="Skype" type="text" ng-class="{ 'has-error' : trialForm.stSkype.$invalid && !trialForm.stSkype.$pristine}" ng-model="stSkype" required />
+                    <input type="hidden" />
+                    <select id="lsLang" class="form-md" name="lsLang">
+                        <option value="Английский">Английский</option>
+                        <option value="Испанский">Испанский</option>
+                        <option value="Итальянский">Итальянский</option>
+                        <option value="Французский">Французский</option>
+                        <option value="Немецкий">Немецкий</option>
+                        <option value="Португальский">Португальский</option>
+                    </select>
+                    <select id="lsLevel" class="form-md" name="lsLevel">
+                        <option value="Нулевой">Нулевой</option>
+                        <option value="Средний">Средний</option>
+                        <option value="Высокий">Высокий</option>
+                    </select>
+                </div>
+            </div>
+            <div id="textarea-row" class="">
+                <div class="foot-modal-note col-md-12">
+                    <textarea id="lsComment" class="form-md text-field block-center" name="lsComment" placeholder="Текст сообщения" type="text"></textarea>
+                    <input id="trialLessonSend" type="button" data-dismiss="modal" class="btn-send btn block-center" value="ОТПРАВИТЬ" onclick="addTrialLesson()" ng-disabled="trialForm.$invalid" />
+                </div>
+            </div>
+        </div>
+    }
+</div>

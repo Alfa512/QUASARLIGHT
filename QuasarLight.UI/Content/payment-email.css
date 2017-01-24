@@ -1,0 +1,183 @@
+﻿body {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    line-height: 1.42857143;
+}
+
+.navbar-header {
+    -moz-min-width: 768px;
+    -ms-min-width: 768px;
+    -o-min-width: 768px;
+    -webkit-min-width: 768px;
+    min-width: 768px;
+    float: left;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+    .navbar-brand:hover,
+    .navbar-brand:focus {
+        text-decoration: none;
+    }
+
+    .navbar-brand > img {
+        display: block;
+    }
+
+.navbar > .container .navbar-brand,
+.navbar > .container-fluid .navbar-brand {
+    margin-left: -15px;
+}
+
+.navbar-fixed-top .navbar-collapse,
+.navbar-static-top .navbar-collapse,
+.navbar-fixed-bottom .navbar-collapse {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+
+.navbar-fixed-top {
+    max-height: 340px;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.navbar-default {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+}
+
+    .navbar-default .navbar-brand {
+        color: #777;
+    }
+
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            color: #5e5e5e;
+            background-color: transparent;
+        }
+
+    .navbar-default .navbar-text {
+        color: #777;
+    }
+
+    .navbar-default .navbar-nav > li > a {
+        color: #777;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            color: #333;
+            background-color: transparent;
+        }
+
+.logo {
+    background: url('http://dialogue-online.ru/Content/img/quasar-light-logo.png');
+    background-repeat: no-repeat;
+    height: 100px;
+    width: 200px;
+    margin-left: 150px !important;
+    margin-top: 10px;
+}
+
+a.navbar-brand.logo {
+    -ms-background-size: 100%;
+    background-size: 100%;
+}
+
+a.navbar-brand.logo {
+    -ms-background-size: 100%;
+    background-size: 100%;
+}
+
+.navbar-default {
+    background: #0a906f;
+    background: rgba(10, 144, 111, 1);
+    border: none;
+    z-index: 2;
+    height: 99px;
+    -webkit-transition: all 0.8s;
+    -moz-transition: all 0.8s;
+    -ms-transition: all 0.8s;
+    -o-transition: all 0.8s;
+    transition: all 0.8s;
+    font-family: Raleway-Medium !important;
+}
+
+#tf-menu a.navbar-brand {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 900;
+}
+
+nav {
+    display: block;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.normal-font {
+    font-size: 20px;
+}
+
+.small-font {
+    font-size: 15px;
+}
+
+.end {
+    background-color: #161616;
+    color: #686868;
+    padding: 15px 0 15px 0;
+    left: 0;
+    right: 0;
+}
+
+footer {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    display: block;
+    right: 0;
+}
+
+.end span {
+    text-align: center;
+    font-family: Raleway-Bold, sans-serif;
+    font-size: 15px !important;
+    margin: 0 auto;
+    display: block;
+    width: 300px;
+}
+
+.skype-data {
+    float: left;
+    margin: -21px 0 0 40px;
+}
+
+.email-data {
+    float: right;
+    margin: -21px 40px 0 0;
+}
+
+.skype-data, .email-data {
+    font-family: Raleway-SemiBold, sans-serif;
+}
+
+.end p > strong {
+    color: #AB5F1C;
+    font-weight: normal;
+}
+
+.main {
+    margin-top: 120px;
+}

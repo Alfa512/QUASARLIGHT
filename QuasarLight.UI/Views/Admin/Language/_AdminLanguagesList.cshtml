@@ -1,0 +1,37 @@
+﻿@{
+    Layout = null;
+}
+@model List<QuasarLight.UI.Models.CourseVm>
+
+@if (Model != null && Model.Any())
+{
+    var i = 0;
+    foreach (var s in Model)
+    {
+        i++;
+        <tr id="cr-row-@s.Id">
+            <td>
+                <div id="crId-@s.Id" class="crId">@i</div>
+            </td>
+            <td>
+                <div id="crLanguage-@s.Id" class="crName">@s.LanguageName</div>
+                <input id="crLanguageI-@s.Id" class="hidden" type="text" name="crLanguage" value="@s.LanguageName" />
+            </td>
+            <td>
+                <img class="flag-teacher" src="@s.IconPath"/>
+            </td>
+            <td>
+                <input type="button" id="@s.Id" class="btn btn-warning btn-xs" value="Редактировать" data-toggle="modal" data-target="#edit-language" onclick="editLanguageInitModal()" />
+                <input type="button" id="@s.Id" class="btn btn-danger btn-xs" value="Удалить" onclick="dellCourse()" />
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td></td>
+        <td>Курсов нет</td>
+        <td></td>
+    </tr>
+}

@@ -1,0 +1,851 @@
+﻿@{ Layout = "../Shared/_Layout.cshtml"; }
+@model List<QuasarLight.UI.Models.TeacherVm>
+@section Title { <title>Преподаватели</title> }
+
+<div class="cd-fixed-bg teachers-bg">
+    <div class="dialogue-container adaptive-pl-pr-0 ">
+        <div class="russian container">
+            <div class="t-pad-1 fadeInDown animated">
+                <h2 class="text-center title-two ">
+                    РУССКОГОВОРЯЩИЕ
+                    <p>ПРЕПОДАВАТЕЛИ</p>
+                </h2>
+                <div class="title_line_1 color_red"></div>
+                <div class="title_line_2 color_red"></div>
+            </div>
+
+
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/julia.png" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Юлия</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 6 лет</h3>
+
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalJulia">
+                                ПОДРОБНЕЕ
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="modal fade teacher-info-modal" id="myModalJulia" tabindex="-1" role="dialog">
+                        <div class="modal-dialog " role="document">
+                            <div id="teacherModalContent" class="modal-content ">
+
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title text-color">Юлия</h4>
+                                </div>
+
+                                <div class="modal-body text-color">
+
+                                    <img class="teacher-img" src="~/Content/img/julia.png" alt="" />
+                                    <div class="col-md-6 col-lg-6">
+                                        <b>Образование: </b>Высшее филологическое
+                                    </div>
+                                    <div class="col-md-6 col-lg-6">
+                                        <b>Стаж: </b>6 лет
+                                    </div>
+                                    <br />
+                                    <br />
+                                   Специализируется на курсах:<br />
+                                    - общий курс английского языка<br />
+                                    - бизнес – английский<br />
+                                    - английский для моряков<br />
+                                    - английский по специализации<br />
+                                    - подготовка к экзаменам<br />
+                                    - подготовка к собеседованию на английском языке<br />
+                                    - подготовка к экзаменам<br />
+                                    - общий курс испанского языка
+
+                                    <br />
+                                    <br />
+                                    <p><b>Привет всем!</b></p>
+                                    <p>
+                                        Меня зовут Юлия, и я преподаю английский и испанский языки уже более шести лет.
+                                    </p>
+                                    <p>
+                                        Преподавание иностранных языков для меня – это работа совместимое с хобби, т.к. изучение и преподавание языков для меня сродни путешествий. А путешествия - моя страсть. Я обучалась и путешествовала по Испании, посещала Италию, Индию и проживала в США. Я люблю путешествовать и узнавать разные страны. Мне нравится смотреть на то, как живут люди, о чем они говорят, что их волнует, чем они дышат. Поэтому, спустя некоторое время преподавания иностранных языков и путешествий (а одно другому не мешает, когда преподавание и обучение ведется по скайпу) я поняла, что важно не только давать студенту возможность узнать грамматику и отработать ту или иную грамматическую конструкцию или новый лексический материал на практике (что является немаловажным в изучении иностранного языка), но также и сделать все возможное посредством преподавания иностранного языка по скайпу, чтобы студент смог окунуться в культуру и традиции страны, язык которой он изучает. Вместе с тем важно объяснять, с какими именно реалиями студент может столкнуться в момент путешествия по стране или же проживая там. Этому я уделяю достаточно внимания, благодаря чему каждый урок не похож на другой и проходит незаметно и в то же время информативно.
+                                    </p>
+                                    <p>
+                                        Я использую исключительно индивидуальный подход, преподавая иностранные языки своим студентам. Поэтому еще на вводном уроке мы совместно со студентом решаем, что является для него/нее наиболее важным и исходя из этого строим наши совместные уроки.
+                                    </p>
+                                    <p>
+                                        До встречи на уроках! ;)
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="inf-education education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher double-fl" src="~/Content/img/flag-eng.png" />
+                            <img class="flag-teacher double-fl sp-dg" src="~/Content/img/flag-sp.png" />
+                            <h4> Преподаватель английского и испанского языков</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="../Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEACHER-1 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/irina.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Ирина</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 4 года</h3>
+
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalIrina">
+                                ПОДРОБНЕЕ
+                            </button>
+
+                            <div class="modal fade teacher-info-modal" id="myModalIrina" tabindex="-1" role="dialog">
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color">Ирина</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/irina.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>4 года
+                                                </div>
+                                            <br />
+                                            <br />
+                                           
+                                                Специализируется на курсе:<br />- Английский для детей
+                                            <br />
+                                            <br />
+                                            
+                                            <p>Английский язык - универсальное средство международной коммуникации. Знакомство с ним у меня, равно как и у всех, началось со школьной скамьи, однако оценить преимущества владения им удалось довольно быстро - спустя несколько лет. Случилось это в средней школе во время первого визита за границу. Когда тебя понимает совершенно незнакомый человек, живущий в тысячах километров от твоей родной улицы, скрыть радость и ликование практически невозможно. </p>
+
+                                            <p>Вероятно, именно это стало причиной возникновения желания изучать английский углублённо, а также продолжить обучение по окончании школы. К слову, при поступлении в университет вопросов с выбором факультета и специальности, что естественно, не возникало. </p>
+
+                                            <p> На данный момент я уже 4 года работаю преподавателем английского языка, помогая своим студентам продвигаться к неминуемому осуществлению их мечты. </p>
+
+                                            <p> Изучение английского языка - увлекательное путешествие в мир грамматики, общения и самосовершенствования. Почему бы не отправиться в него вместе прямо сейчас? </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="inf-education education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="../Content/img/flag-eng.png" />
+                            <h4> Преподаватель английского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="../Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- TEACHER-2 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/helen.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Елена</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 14 лет</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalHelen">
+                                ПОДРОБНЕЕ
+                            </button>
+
+                            <div class="modal fade teacher-info-modal" id="myModalHelen" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color">Елена</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/helen.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>14 лет
+                                                </div>
+                                            <br />
+                                            <br />
+                                            <br />
+                                            <p>Вы хотите учиться в итальянском университете? Вы планируете работать в Италии? А может, вы просто «болеете» Италией, хотите приобщиться к ее культуре и искусству, вас привлекает знаменитый итальянский стиль жизни, вы заслушиваетесь итальянскими песнями и мечтаете освоить певучий итальянский язык? Тогда записывайтесь на наши занятия по итальянскому! Вы окунетесь в дружескую и непринужденную атмосферу общения на иностранном языке на моих уроках. Меня зовут Елена Коломойцева, я преподаватель-лингвист с большим практическим опытом, была в Италии много раз, объездила ее всю с севера на юг, хорошо ее знаю и очень люблю. Но особенно мне нравится ее язык.</p>
+                                            <p>У меня два высших образования, в 2003 году я закончила с отличием Севастопольский гуманитарный университет, филологический факультет, по специальности «Английский язык и литература», имею Кембриджский сертификат по английскому, свободно на нем говорю. Я работала преподавателем, переводчиком английского языка и гидом-переводчиком, но меня всегда интересовала Италия, я выучила итальянский, в 2009 году сдала экзамен и получила Международный сертификат владения итальянским языком CELI 3 B2 (Университет г. Перуджи, Италия) с отличием, что позволило мне начать преподавание итальянского профессионально. В 2013 году я прошла курс итальянской лингвистики и культуры уровня С2 по системе сертификации Европейского Союза (ALTE LEVEL 5) в Университете г. Перуджи, Италия.</p>
+                                            <p>Учите итальянский со мной, и вы почувствуете себя частичкой вечной дружбы между нашей страной и прекрасной Италией. выберите темп обучения, который больше вам подходит, и мы посвятим наши уроки развитию навыков говорения, аудирования, чтения и письма на итальянском языке. комфортная обстановка и полное языковое погружение вам гарантированы!</p>
+                                            <span></span>
+                                            <p>Ragazzi non pensate troppo! E’ ora di studiare l’italiano!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-it.png" />
+                            <h4> Преподаватель итальянского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEACHER-3 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/alena.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Алена</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 6 лет</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalAlena">
+                                ПОДРОБНЕЕ
+                            </button>
+                            <div class="modal fade teacher-info-modal" id="myModalAlena" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color" >Елена</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/alena.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>6 лет
+                                                </div>
+                                            <br />
+                                            <br />
+                                            <p>Специализируется на курсах: </p>
+                                            <p>- Общий курс английского языка </p>
+                                            <p> - Бизнес-английский</p>
+                                            <p>- Подготовка к собеседованию </p>
+                                            <p>- Подготовка к ЕГЭ/ОГЭ</p>
+                                            <p>- Английский для моряков</p>
+                                            <p>Знать язык и преподавать его — две совершенно разные вещи. Еще в школе , когда я начала изучать английский, я поняла , что главное - это система и доступный язык, а не заумные фразы. Только тогда Вы быстро сможете освоить грамматику и научиться строить диалог. Занятия со мной помогут Вам не только изучить английский язык, но и обрести надлежащую мотивацию необходимую для достижения высоких результатов, а, может быть, даже изменить свою жизнь!</p>
+                                            <p>С радостью жду вас на занятиях!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="../Content/img/flag-eng.png" />
+                            <h4> Преподаватель английского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="../Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- TEACHER-4 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/teacher-nadezhda.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Надежда</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 15 лет</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalNadezhda">
+                                ПОДРОБНЕЕ
+                            </button>
+                            <div class="modal fade teacher-info-modal" id="myModalNadezhda" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color" >Надежда</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/teacher-nadezhda.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>15 лет
+                                                </div>
+                                            <br />
+                                            <p> Специализируется на курсах: </p>
+                                            <p> -общий курс французского языка</p>
+                                            <p> - разговорная речь</p>
+                                            <p> - французский для путешествий</p>
+                                            <p> - французский для отельно-ресторанного бизнеса</p>
+                                            <p> - бизнес-курс французского языка</p>
+                                            <p> -подготовка в сдаче международных экзаменов DELF-DALF</p>
+                                            <p>
+                                                Преподаю язык 15 лет, работаю с подростками, студентами, взрослыми.
+                                                Начав изучать французский язык еще в школе, я решила продолжить его изучение в университете на факультете романо-германской филологии, чтобы впоследствии самой преподавать. С тех пор французский стал частью моей жизни, не просто работой, но работой-хобби, всегда увлекательной и интересной.
+                                                Язык – это настоящее чудо, волшебный ключ, которым можно открыть дверь в мир науки и искусства, традиций и обычаев, быта и мировосприятия других стран и народов… А изучение языка – захватывающий и увлекательный процесс, процесс в чем-то сродни первооткрывательству, освоению новых неизведанных пространств… Изучая язык вы научитесь понимать не просто слово, не просто фразу, но других людей, непохожих на вас, мыслящих иначе, иначе воспринимающих этот мир.
+                                                Если у Вас есть намерение учиться или работать во Франции либо другой франкоговорящей стране, вести переговоры с носителями французского языка, и даже просто путешествовать, приобщаясь к быту, обычаям и традициям разных стран, владение языком станет Вашим неоспоримым преимуществом, сделает Вас увереннее в себе и поможет добиться поставленных целей. А я сделаю все возможное, чтобы изучение языка стало для вас увлекательным, интересным и максимально продуктивным!
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-fr.png" />
+                            <h4> Преподаватель французского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        <!-- TEACHER-5 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/teacher-larissa.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Лариса</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 5 лет</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalLarissa">
+                                ПОДРОБНЕЕ
+                            </button>
+
+                            <div class="modal fade teacher-info-modal" id="myModalLarissa" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color" >Лариса</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/teacher-larissa.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>5 лет
+                                                </div>
+                                            <br />
+                                            <p>Специализируется на курсах:</p>
+                                            <p>- изучение языка «с нуля»</p>
+                                            <p>- подготовка к сдаче экзамена для получения языкового сертификата</p>
+                                            <p>- подготовка к туристическим поездкам в немецкоязычные страны</p>
+                                            <p>- языковая подготовка для прохождения собеседования в Германии</p>
+                                            <p>- помощь студентам языковых и неязыковых специальностей</p>
+                                            <p>- помощь со школьной программой</p>
+                                            <p>
+                                                Образование: магистр филологии, преподаватель немецкого языка (Таврический Национальный Университет им.Вернадского, г. Симферополь).
+                                                Языковой сертификат: сертификат Гёте-Института, С1.
+                                                Международная практика: программы студенческого обмена, обучение в Германии, волонтер во время чемпионата ЕВРО 2012 в Киеве, гид для немецких туристов.
+                                                Уровень студентов: от нулевого до В2 включительно.
+                                            </p>
+                                            <p>Принципы работы:</p>
+                                            <p>- политика сотрудничества</p>
+                                            <p>- следование интересам студента</p>
+                                            <p>- корректировка программ в соответствии с пожеланиями студента.</p>
+                                            <p>Научимся говорить по-немецки вместе!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-de.png" />
+                            <h4> Преподаватель немецкого языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- TEACHER-6 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/anna.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Анна</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 2 года</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalAnna">
+                                ПОДРОБНЕЕ
+                            </button>
+                            <div class="modal fade teacher-info-modal" id="myModalAnna" tabindex="-1" role="dialog">
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color">Анна</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/anna.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>2 года
+                                                </div>
+                                            <br />
+                                            <p></p>
+                                            <p>Специализируется на курсах:</p>
+                                            <p>- общий курс английского языка</p>
+                                            <p>- бизнес – английский</p>
+                                            <p>- подготовка к экзаменам </p>
+                                            <p>Моя тяга к английскому языку началась в детстве с первых англоязычных песен. В университете тяга переросла в страсть, и со временем - в любовь к слову. Одновременно пришло понимание, что мне безумно нравится учить людей, от мала до велика.</p>
+                                            <p>Всё потому, что я люблю учиться и делиться, отсюда и любовь к преподаванию. Ведь когда получаешь от чего-то удовольствие, желание разделить радость будет естественным. В моём случае – это радость познания и ощущение, что всё возможно. Я искренне верю, и постоянно убеждаюсь в том, что совершенно любой человек может научиться английскому языку. Успех не зависит от возраста, статуса и других условностей. Имеет значение только ваше желание. </p>
+                                            <p>Постоянно совершенствуюсь в профессиональной сфере, в том числе и при помощи онлайн курсов British Council, Cambridge.  Также не обхожу стороной возможности онлайн образования от ведущих университетов мира, которые проводят открытые курсы посредством платформ Coursera и FutureLearn.</p>
+                                            <p>Имею следующие сертификаты Cambridge: English: Advanced (CAE), Teaching Knowledge Test: Module 2, Teaching Knowledge Test: Young Learners (альтернатива Young Learner extension to CELTA).</p>
+                                            <p>До встречи на занятиях!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-eng.png" />
+                            <h4> Преподаватель английского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <!-- TEACHER-7 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/teacher-Lora.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Лора</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 7 лет</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalLora">
+                                ПОДРОБНЕЕ
+                            </button>
+
+                            <div class="modal fade teacher-info-modal" id="myModalLora" tabindex="-1" role="dialog">
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color">Лора</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/teacher-Lora.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>7 лет
+                                                </div>
+                                            <br />
+                                            <p></p>
+                                            <p>Специализируется на курсах:</p>
+                                            <p>- общий курс английского языка</p>
+                                            <p>- английский для детей </p>
+
+                                            <p>
+                                                Обожаю учиться и люблю учить. Изучаю английский язык с 6-летнего возраста, постоянно открываю что-нибудь новенькое для себя и делюсь со своими студентами. Путешествия и книги -это я, поэтому скучно не будет, это точно. Давайте забудем об унылой и неприятной зубрежке! Используя живую речь, наглядные примеры и постоянно общаясь, мы выучим самые сложные грамматические обороты
+                                                и без стеснения будем изъясняться на английском языке в какой бы точке мира мы не оказались. Особенное внимание уделяем произношению, будем “своими” в любой англоязычной среде.
+                                            </p>
+
+                                            <p>Who wants some English? Let's go!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-eng.png" />
+                            <h4> Преподаватель английского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TEACHER-8 -->
+            <div class="teacher-block col-md-6">
+                <div class="inTeach">
+                    <div class="data-teacher education-content col-md-6">
+
+                        <img class="teacher-img" src="/Content/img/teacher-Helen.jpg" />
+                        <div class="inf-teacher-title">
+                            <h2 class="inf-teacher">Елена</h2>
+                            <br>
+                            <h3 class="inf-teacher">Стаж: 3 года</h3>
+                            <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalHelen2">
+                                ПОДРОБНЕЕ
+                            </button>
+                            <div class="modal fade teacher-info-modal" id="myModalHelen2" tabindex="-1" role="dialog" >
+                                <div class="modal-dialog " role="document">
+                                    <div id="teacherModalContent" class="modal-content ">
+
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                            <h4 class="modal-title text-color" >Елена</h4>
+                                        </div>
+
+                                        <div class="modal-body text-color">
+
+                                            <img class="teacher-img" src="~/Content/img/teacher-Helen.jpg" alt="" />
+
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Образование: </b>Высшее филологическое
+                                                </div>
+                                                <div class="col-md-6 col-lg-6">
+                                                    <b>Стаж: </b>3 года
+                                                </div>
+                                            <br />
+                                            <br />
+                                            <p>Добрый день, дорогие друзья! </p>
+                                            <p>
+                                                Я живу и учусь, одновременно работая в Италии больше 10 лет. В течении этого периода я не только выучила язык, но также впитала в себя характер,
+                                                эмоции и жестикуляцию итальянцев. Посредством выражения которых они передают большую часть информации о себе. Моё произношение очень приближено к
+                                                произношению носителей языка. И поэтому мне очень нравится вести курс «Разговорный итальянский», который базируется на диалоге между студентом и репетитором.
+                                                И этот материал я изначально готовлю для каждого индивидуально. Эта важнейшая практика помогает снять скованность в общении, дает автоматизм в восприятии языка
+                                                и способность отвечать быстро и грамотно. Но чтобы к ней подойти, мы будем изучать грамматику, методика которой основывается на совмещении традиционного прохождения
+                                                материала с использованием богатого поэтического наследства итальянской культуры, а также всевозможные интернет - ресурсы. Поскольку замечено, что слова, фразы и
+                                                выражения быстро, с удовольствием и навсегда запоминаются именно в песнях, стихах и поговорках, то такой материал будет у нас в избытке. Интересные, зачастую весёлые
+                                                уроки по скайпу вам помогут не только изучить язык, но также впитать в себя частичку культуры и души этого народа. Друзья мои, мне хотелось бы передать вам всю мою
+                                                любовь к этому мелодичному и поэтичному языку, в корнях которого скрывается латынь как праматерь всех языков романо-германской группы.
+                                            </p>
+                                            <p>Приходите на мои уроки, друзья!
+                                            <p> Ci divertiremo un sacco!</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="education-content col-md-6">
+                        <div class="part-2-teacher">
+                            <img class="flag-teacher" src="~/Content/img/flag-it.png" />
+                            <h4> Преподаватель итальянского языка</h4>
+                        </div>
+                        <br />
+                        <div class="part-2-teacher">
+                            <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                            <h4> Образование:<br /> Высшее филологическое</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-techers-2 dialogue-container">
+            <div class="leng-speak container">
+                <div class="t-pad">
+                    <h2 class="text-center title-two teach-2part fadeInDown animated">
+                        ПРЕПОДАВАТЕЛИ <br /> НОСИТЕЛИ ЯЗЫКА
+                    </h2>
+                    <div class="title_line_1"></div>
+                    <div class="title_line_2"></div>
+                </div>
+
+                <div class="teacher-block col-md-6">
+                    <div class="inTeach">
+                        <div class="data-teacher education-content col-md-6">
+
+                            <img class="teacher-img" src="/Content/img/gerard.jpg" />
+                            <div class="inf-teacher-title">
+                                <h2 class="inf-teacher">Gerard</h2>
+                                <br>
+                                <h3 class="inf-teacher">Стаж: 5 лет</h3>
+                                <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalGerard">
+                                    ПОДРОБНЕЕ
+                                </button>
+                                <div class="modal fade teacher-info-modal" id="myModalGerard" tabindex="-1" role="dialog" >
+                                    <div class="modal-dialog " role="document">
+                                        <div id="teacherModalContent" class="modal-content ">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title text-color" >Gerard</h4>
+                                            </div>
+
+                                            <div class="modal-body text-color">
+
+                                                <img class="teacher-img" src="~/Content/img/gerard.jpg" alt="" />
+
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Образование: </b>Высшее филологическое
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Стаж: </b>5 лет
+                                                    </div>
+                                                <br />
+                                                <br />
+                                                <p>After teaching English and Spanish in several countries around the world such as Ukraine, Russia, Romania, Croatia, Mexico etc. I’ve learned that there’s no general formula for everyone, every student has their own. And we teachers should help each and every individual to find it. Some need more grammar practice, others need to improve conversational skills. My vast teaching experience has showed me that the most important thing in class is making sure the student is comfortable, and making progress achieving their goals.</p>
+                                                <p>A study plan must be made and goals should be set. Classes should be fun, interactive and professionally held.</p>
+                                                <p>I like the quote by Frank Smith that goes, “One language sets you in a corridor for life. Two languages open every door along the way.”</p>
+                                                <p>So why don’t you give it a try and discover how easy and fun learning a new language can be.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="education-content col-md-6">
+                            <div class="part-2-teacher gerard-sp">
+                                <img class="flag-teacher double-fl" src="~/Content/img/flag-eng.png" />
+                                <img class="flag-teacher double-fl sp-dg" src="~/Content/img/flag-sp.png" />
+                                <h4> Преподаватель английского и испанского языков</h4>
+                            </div>
+                            <br />
+                            <div class="part-2-teacher">
+                                <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                                <h4> Образование:<br /> Высшее филологическое</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEACHER-2 -->
+                <div class="teacher-block col-md-6">
+                    <div class="inTeach">
+                        <div class="data-teacher education-content col-md-6">
+
+                            <img class="teacher-img" src="/Content/img/paul.jpg" />
+                            <div class="inf-teacher-title">
+                                <h2 class="inf-teacher">Paul</h2>
+                                <br>
+                                <h3 class="inf-teacher">Стаж: 8 лет</h3>
+                                <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalPaul">
+                                    ПОДРОБНЕЕ
+                                </button>
+                                <div class="modal fade teacher-info-modal" id="myModalPaul" tabindex="-1" role="dialog" >
+                                    <div class="modal-dialog " role="document">
+                                        <div id="teacherModalContent" class="modal-content ">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title text-color" >Paul</h4>
+                                            </div>
+
+                                            <div class="modal-body text-color">
+
+                                                <img class="teacher-img" src="~/Content/img/paul.jpg" alt="" />
+
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Образование: </b>Высшее филологическое
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Стаж: </b>8 лет
+                                                    </div>
+                                                <br />
+                                                <br />
+                                                <p>My name is Paul Schafer. I am an American from California. For the past 8 years I have been teaching English to Russians and Ukrainians. I teach groups and individuals, including hundreds of diverse students: teenagers, adults, seamen, businessmen, English teachers, IT developers and many others. I've learned that the greatest needs lie in speaking and listening practice. Many of my students have passed various exam certifications, including IELTS, TOEFL, FCE, CAE and CPE. My students have immigrated, entered Western universities, found work in foreign companies, and improved their positions within their own employment.</p>
+                                                <p>I'm not a typical English teacher for people here. My students learn grammar by speaking correctly, not by memorizing rules. When they make a mistake, I correct them and make them repeat correctly. I help my students to learn how to choose more appropriate vocabulary. </p>
+                                                <p>I take great personal interest in each and every one of my students. I pay close attention to the uniqueness of every individual, and use this to inspire confidence in spontaneous conversation. </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="education-content col-md-6">
+                            <div class="part-2-teacher">
+                                <img class="flag-teacher" src="~/Content/img/flag-eng.png" />
+                                <h4> Преподаватель английского языка</h4>
+                            </div>
+                            <br />
+                            <div class="part-2-teacher">
+                                <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                                <h4> Образование:<br /> Высшее филологическое</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TEACHER-3 -->
+                <div class="teacher-block col-md-6">
+                    <div class="inTeach">
+                        <div class="data-teacher education-content col-md-6">
+
+                            <img class="teacher-img" src="/Content/img/teacher-fred.jpg" />
+                            <div class="inf-teacher-title">
+                                <h2 class="inf-teacher">Fred</h2>
+                                <br>
+                                <h3 class="inf-teacher">Стаж: 9 лет</h3>
+                                <button type="button" class="btn btn-color" data-toggle="modal" data-target="#myModalFred">
+                                    ПОДРОБНЕЕ
+                                </button>
+
+                                <div class="modal fade teacher-info-modal" id="myModalFred" tabindex="-1" role="dialog" >
+                                    <div class="modal-dialog " role="document">
+                                        <div id="teacherModalContent" class="modal-content ">
+
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title text-color" >Fred</h4>
+                                            </div>
+
+                                            <div class="modal-body text-color">
+
+                                                <img class="teacher-img" src="~/Content/img/teacher-fred.jpg" alt="" />
+
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Образование: </b>Высшее филологическое
+                                                    </div>
+                                                    <div class="col-md-6 col-lg-6">
+                                                        <b>Стаж: </b>9 лет
+                                                    </div>
+                                                <br />
+                                                <br />
+                                                <p>
+                                                    Enseño español 9 años. Lo hablo fluido, ya que lo sé desde que nací.
+                                                    Experiencia de trabajo:
+                                                </p>
+                                                <p> - 9 años como profesor particular.</p>
+                                                <p> - 6 años como profesor de la Universidad internacional de Kiev (2009-2015)</p>
+                                                <p> - Profesor de preparación para el examen DELE.</p>
+                                                <p> - Dirección de exámenes estatales.</p>
+                                                <p>
+                                                    Doy clases de español con ayuda de materiales de audio y video. En mi
+                                                    experiencia como profesor de español, he reunido mucha literatura
+                                                    interesante y útil. Yo me esfuerzo para que mis estudiantes no se
+                                                    queden como estudiantes toda la vida. Mi objetivo es de que ellos
+                                                    sean profesores o nativos de esta lengua tan maravillosa. Nosotros
+                                                    con mis estudiantes somos UN EQUIPO y juntos nos profundizaremos en
+                                                    el maravilloso mundo de la cultura española y latinoamericana. De una
+                                                    manera interesante aprenderá la gramática. Nuestro objetivo es de que
+                                                    tenga tanto vocabulario como un nativo de la lengua. Tengo estudiantes
+                                                    que lograron ese objetivo. Y trabajaremos juntos para lograrlo. Yo
+                                                    resultados.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="education-content col-md-6">
+                            <div class="part-2-teacher gerard-sp">
+                                <img class="flag-teacher" src="~/Content/img/flag-sp.png" />
+                                <h4>Преподаватель испанского языка</h4>
+                            </div>
+                            <br />
+                            <div class="part-2-teacher">
+                                <img class="icon-education" src="~/Content/img/icon-eduaction.png" />
+                                <h4> Образование:<br /> Высшее филологическое</h4>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@Scripts.Render("~/bundles/teacher")
+
+<script>
+    $(document).ready(function () {
+        $("#teachers").addClass("page-scroll-active");
+    });
+</script>

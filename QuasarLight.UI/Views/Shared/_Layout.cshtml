@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="author" content="">
+    @RenderSection("EnglishTags", false)
+    @RenderSection("SpanishTags", false)
+    @RenderSection("ItalianTags", false)
+    @RenderSection("FrenchTags", false)
+    @RenderSection("GermanTags", false)
+    @RenderSection("Title", false)
+
+    <link href="~/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+
+    @Scripts.Render("~/bundles/layout.top")
+    @Styles.Render("~/Content/css")
+</head>
+<body ng-app="dialogue-app">
+    @Scripts.Render("~/bundles/layout")
+
+    <main class="cd-main-content ">
+
+        @Html.Partial("_TopBar")
+        @Html.Partial("_TrialLessonMessage")
+        <input id="addTrialLessonUrl" type="hidden" value="@Url.Action("AddNewLessonTrial", "Lesson")" />
+        <input id="loadTrialLessonModalUrl" type="hidden" value="@Url.Action("TrialLessonModal", "Lesson")" />
+        <div class="modal fade trial-lesson-modal" id="trial-lesson-dialog" tabindex="-1" role="dialog">
+            <div compile="trialLessonModalContainer" name="trial-lesson-modal-container" id="trial-lesson-dialog-in" class="modal-dialog modal-w" role="document" ng-controller="validateCtrl">
+
+            </div>
+        </div>
+        <div class="modal fade teacher-info-modal" id="TeacherModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog " role="document">
+                <div id="teacherModalContent" class="modal-content ">
+
+                </div>
+            </div>
+        </div>
+
+        @RenderBody()
+        @Html.Partial("_Footer")
+        @Scripts.Render("~/bundles/layout.bottom")
+    </main>
+    <noscript>
+        <div>
+            <img src="https://mc.yandex.ru/watch/33702239" style="position: absolute; left: -9999px;" alt="" />
+        </div>
+    </noscript>
+</body>
+</html>

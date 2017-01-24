@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+@model List<QuasarLight.UI.Models.StudentVm>
+
+<div role="tabpanel" class="tab-pane fade" id="students">
+    <h1 class="page-header-adm">Студенты</h1>
+
+    <button type="button" class="btn btn-add" data-toggle="modal" data-target="#ModaladdSt">
+        Добавить студента
+    </button>
+    @Html.Partial("Students/_AddStudentModal");
+    <div class="modal fade" id="paytable" tabindex="-1" role="dialog">
+        <div class="modal-dialog " role="document">
+            <div class="modal-content billsSt">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Платежи</th>
+                            <th>Осталось уроков</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>dd/mm/yyyy *сумма*</td>
+                            <td>5 уроков по 90 минут</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>dd/mm/yyyy *сумма*</td>
+                            <td>10 уроков по 90 минут</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>dd/mm/yyyy *сумма*</td>
+                            <td>15 уроков по 90 минут</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table id="students-table" class="table table-striped text-color-adm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ФИО</th>
+                    <th>E-mail</th>
+                    <th>Скайп</th>
+                    <th>Курс</th>
+                    <th>Преподаватель</th>
+                    <th>Оплата</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @Html.Partial("Students/_StudentsList", Model);
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="edit-student" tabindex="-1" role="dialog">
+        @Html.Partial("Students/_EditStudentModal");
+    </div>
+</div>

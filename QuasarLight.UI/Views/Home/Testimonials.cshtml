@@ -1,0 +1,43 @@
+﻿@model List<QuasarLight.Domain.Models.Feedback>
+@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<div class="cd-scrolling-bg cd-color-2 fix-mh">
+    <div class="container">
+        <div class="all-feedbacks-container">
+            <h1>Отзывы наших студентов</h1>
+            @foreach (var feedback in Model)
+            {
+                <div id="feedback-@feedback.Id" class="full-feadback">
+                    <div class="feedback-image">
+                        <a href="~/feedback#feedback-@feedback.Id">
+                            <img class="teacher-img" src="@feedback.Image" alt=""/>
+                        </a>
+                    </div>
+                    <div class="feedback-text">
+                        <div class="feedback-main-text">
+                            @Html.Raw(@feedback.Text)
+                            <br class="clear"/>
+                        </div>
+                        <div class="feedback-autor">
+                            @Html.Raw(feedback.Autor)
+                        </div>
+                    </div>
+                    <br class="clear"/>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/jquery.localScroll.js"></script>
+<script>
+    $(document).ready(function() {
+        $("#feedbacks").addClass("page-scroll-active");
+        $(window).localScroll({ duration: 800 });
+        setTimeout(function() {
+            window.scrollBy(0, -100);
+        }, 500);
+
+    });
+</script>

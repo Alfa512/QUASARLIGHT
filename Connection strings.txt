@@ -1,0 +1,4 @@
+    <!--<add name="Main" connectionString="Data Source=(LocalDb)\v11.0;Initial Catalog=Dialogue;Integrated Security=True;Pooling=False" providerName="System.Data.SqlClient" />-->
+        <add name="Main" connectionString="data source=ALFANEUTRINO; Integrated Security=True; Initial Catalog = Dialogue; User ID=ALFA; Password=alfa1234" providerName="System.Data.SqlClient" />
+    <!--<add name="Main" providerName="System.Data.SqlClient" connectionString="Data Source=(LocalDB)\v11.0;AttachDbFilename=C:\Users\IrinaDev\Documents\Dialogue.mdf;Integrated Security=True;Connect Timeout=30" />-->
+    <!--<add name="Main" connectionString="data source=ALFA-MAINWORKST\ALFASERVER; Integrated Security=True; Initial Catalog = Dialogue; User ID=alfa; Password=alfa512ks" providerName="System.Data.SqlClient" />-->

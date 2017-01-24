@@ -1,0 +1,80 @@
+﻿@{
+    Layout = null;
+}
+
+@using Microsoft.Ajax.Utilities
+@model QuasarLight.UI.Models.TrialLessonVm
+<head>
+    <style type="text/css">
+        .Email {
+            color: #ff7700;
+        }
+
+        .skype {
+            color: #007ccc;
+        }
+
+        p {
+            text-indent: 20px;
+            margin-top: 0.5em;
+            margin-bottom: 0.5em;
+        }
+    </style>
+</head>
+<body>
+    <h2>Запрошен новый пробный урок!</h2>
+    <br />
+    <h4><b>Студент:</b></h4>
+    @if (!Model.StFullName.IsNullOrWhiteSpace())
+    {
+        <p>@Model.StFullName</p>
+    }
+    @if (!Model.StEmail.IsNullOrWhiteSpace())
+    {
+        <p>
+            E-Mail: <a class="Email">@Model.StEmail</a>
+        </p>
+    }
+    @if (!Model.StAge.IsNullOrWhiteSpace())
+    {
+        <p>Возраст: @Model.StAge</p>
+    }
+    @if (!Model.StSkype.IsNullOrWhiteSpace())
+    {
+        <p>
+            Skype: <a class="skype">@Model.StSkype</a>
+        </p>
+    }
+    @if (!Model.StCity.IsNullOrWhiteSpace())
+    {
+        <p>Город: @Model.StCity</p>
+    }
+    @*<br />*@
+    <h4>Урок:</h4>
+    @if (!Model.LsLang.IsNullOrWhiteSpace())
+    {
+        <p>@Model.LsLang язык</p>
+    }
+
+    @if (!Model.LsDateTime.IsNullOrWhiteSpace())
+    {
+        <p>На @Model.LsDateTime</p>
+    }
+    @if (Model.LsComment.IsNullOrWhiteSpace())
+    {
+        Model.LsComment = "Эй, Амиго!\nЯ уже говорил тебе, что такое безумие? А?... \nБезумие - это:\nТочное повторение одного и того же действия,\nраз за разом.\nВ надежде на изменение.\nЭто есть безумие...";
+    }
+    @if (!Model.LsComment.IsNullOrWhiteSpace())
+    {
+        <h4>Дополнительная информация:</h4>
+        var text = Model.LsComment.Split('\n');
+        foreach (var s in text)
+        {
+            <p>@s</p>
+        }
+    }
+
+    <br />
+
+    <p>Пройдите в <a href="http://dialogue-online.ru/Admin/Administration">раздел администрирования</a> для просмотра.</p>
+</body>

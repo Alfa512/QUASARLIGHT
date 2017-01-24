@@ -1,0 +1,85 @@
+﻿@model List<QuasarLight.UI.Models.TeacherVm>
+
+@foreach (var t in Model)
+{
+    var single = t.Lenguages.Count > 0 && t.Lenguages.Count == 1;
+    var twin = t.Lenguages.Count == 2;
+    var multi = t.Lenguages.Count > 2;
+    <div class="teacher-block col-md-6">
+        <div class="inTeach">
+            <div class="data-teacher education-content col-md-6">
+                <img class="teacher-img" src="@t.ImagePath" alt=""/>
+                <div class="inf-teacher-title">
+                    <h2 class="inf-teacher">@t.FullName</h2>
+                    <br>
+                    <h3 class="inf-teacher">Стаж: @t.ExperienceInYears</h3>
+                    <button type="button" class="btn btn-color" data-toggle="modal" onclick="loadTeacherModal(@t.Id)">
+                        ПОДРОБНЕЕ
+                    </button>
+                </div>
+            </div>
+            <div class="inf-education education-content col-md-6">
+                <div class="part-2-teacher">
+                    @if (single)
+                    {
+                        <img class="flag-teacher double-fl" src="@t.Lenguages.First().IconPath" alt=""/>
+                        <h4>Преподаватель @t.Lenguages.First().LanguageName.Pluralize() языка</h4>
+                    }
+                    @if (twin)
+                    {
+                        var i = 0;
+                        var lengs = "";
+                        foreach (var leng in t.Lenguages)
+                        {
+                            if (i == 0)
+                            {
+                                lengs += leng.LanguageName.Pluralize();
+                                <img class="flag-teacher" src="@leng.IconPath" alt=""/>
+                            }
+                            else
+                            {
+                                lengs += " и " + leng.LanguageName.Pluralize();
+                                <img class="flag-teacher sp-dg" src="@leng.IconPath" alt=""/>
+                            }
+                            i++;
+                        }
+                        <h4>Преподаватель @lengs языков</h4>
+                    }
+                    @if (multi)
+                    {
+                        var i = 0;
+                        var lengs = "";
+                        foreach (var leng in t.Lenguages)
+                        {
+                            if (i == 0)
+                            {
+                                lengs += leng.LanguageName.Pluralize();
+                                <img class="flag-teacher" src="@leng.IconPath" alt=""/>
+                            }
+                            else if (i > 0 && i != t.Lenguages.Count - 1)
+                            {
+                                lengs += ", " + leng.LanguageName.Pluralize();
+                                <img class="flag-teacher double-fl sp-dg" src="@leng.IconPath" alt=""/>
+                            }
+                            else
+                            {
+                                lengs += " и " + leng.LanguageName.Pluralize();
+                                <img class="flag-teacher double-fl sp-dg" src="@leng.IconPath" alt=""/>
+                            }
+                            i++;
+                        }
+                        <h4>Преподаватель @lengs языков</h4>
+                    }
+                </div>
+                <br />
+                <div class="part-2-teacher">
+                    <img class="icon-education" src="~/Content/img/icon-eduaction.png" alt="" />
+                    @if (t.Education != null)
+                    {
+                        <h4> Образование:<br /> @t.Education</h4>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+}

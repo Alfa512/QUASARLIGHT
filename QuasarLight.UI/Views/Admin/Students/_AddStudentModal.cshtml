@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+}
+@model QuasarLight.UI.Models.StudentVm
+
+<div class="modal fade" id="ModaladdSt" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content form-add">
+            <div class="modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="timetable-text head-add-form" >Добавить студента</h4>
+            </div>
+            <div id="addStMessage" class="hidden"></div>
+            @using (Ajax.BeginForm("AddStudent", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { Id = "addStForm" }))
+            {
+                <div class="col-add col-md-12">
+                    @Html.ValidationMessageFor(m => m.FullName)
+                    @Html.TextBoxFor(m => m.FullName, new { Id = "aStFullName", Name = "FullName", Class = "addInf", Placeholder = "Имя" })
+                    @Html.ValidationMessageFor(m => m.Email)
+                    @Html.TextBoxFor(m => m.Email, new { Id = "aStEmail", Name = "Email", Class = "addInf", Placeholder = "E-mail" })
+                    @Html.ValidationMessageFor(m => m.Skype)
+                    @Html.TextBoxFor(m => m.Skype, new { Id = "aStSkype", Name = "Skype", Class = "addInf", Placeholder = "Skype" })
+                </div>
+
+                <div class="col-add col-md-12">
+                    <div class="modal_footer">
+                        <button type="button" class="btn-adds" onclick="addStudentBtn()">Добавить</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

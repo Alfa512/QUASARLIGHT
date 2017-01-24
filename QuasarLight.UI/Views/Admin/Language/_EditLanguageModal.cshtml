@@ -1,0 +1,43 @@
+﻿@{
+    Layout = null;
+
+    var id = Model != null ? Model.Id : "";
+    var language = Model != null ? Model.LanguageName ?? "" : "";
+}
+@model QuasarLight.UI.Models.CourseVm
+
+<div class="modal-dialog " role="document">
+    <div class="modal-content form-add">
+        <div id="editStMessage" class="hidden"></div>
+        <div class="modal_header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="timetable-text head-add-form">Редактировать курс</h4>
+        </div>
+        @using (Ajax.BeginForm("EditCourse", null, new AjaxOptions { HttpMethod = "POST" }, new { id = "editCrAjaxForm", enctype = "multipart/form-data" }))
+        {
+            <div id="edit-student-inputs" class="col-add col-md-12">
+                <input id="editCrId" type="hidden" name="Id" value="@id" />
+                @Html.ValidationMessageFor(m => m.LanguageName)
+                @Html.TextBoxFor(m => m.LanguageName, new { Class = "addInf", Placeholder = "Имя", value = language })
+            </div>
+            <div class="form-group col-md-12">
+                <div class="fileform-admin">
+                    <div id="lenguageImageEditFormLabel" class="imageformlabel"></div>
+                    <div class="selectbutton">Обзор</div>
+                    @Html.TextBoxFor(m => m.IconFile, new { Name = "IconFile", type = "file", Class = "selectFile", onchange = "getName(this.value, lenguageImageEditFormLabel);" })
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <div class="progress progress-striped">
+                    <div class="progress-bar progress-bar-success">0%</div>
+                </div>
+            </div>
+            <div id="ajaxSendStatusEditCourse" class="form-group col-md-12 alert-success hidden"></div>
+            <div class="form-group col-md-12">
+                <div class="modal_footer">
+                    <button type="button" class="btn-adds" onclick="processCourse(2)">Сохранить</button>
+                </div>
+            </div>
+        }
+    </div>
+</div>

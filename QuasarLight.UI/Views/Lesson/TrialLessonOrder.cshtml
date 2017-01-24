@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section Title
+{
+    <title>ЗАПИСАТЬСЯ НА ВВОДНЫЙ УРОК</title>
+}
+<div class="modal-content-ios no-decor">
+    <div class="inner-content-ios">
+        <div class="trial-modal-top-ios">
+            <h3 class="text-center overlay">ЗАПИСАТЬСЯ НА ВВОДНЫЙ УРОК</h3>
+        </div>
+        @using (Html.BeginForm("AddNewLessonTrial", "Lesson", FormMethod.Post, new {id = "iosAddTrialLessonForm", name = "trialForm", novalidate = ""}))
+        {
+            <div class="forms-dialogue-ios">
+                <div id="inputs-row-ios" class="row">
+                    <div class="narrow-width-ios extension-col-md-6 col-md-6">
+                        <input id="stName" class="form-md" name="stFullName" placeholder="Ваше имя" type="text" ng-class="{ 'has-error' : trialForm.stFullName.$invalid && !trialForm.stFullName.$pristine }" ng-model="stFullName" required/>
+                        <input id="stEmail" type="email" name="stEmail" class="form-md" placeholder="Ваш e-mail" ng-class="{ 'has-error' : trialForm.stEmail.$invalid && !trialForm.stEmail.$pristine}" ng-model="stEmail" ng-change="change()" required/>
+                        <input id="lsDate" type="text" onfocus="changeDateInputAttr()" class="modal-inp-date form-md" name="lsDateTime" placeholder="Дата" ng-class="{ 'has-error' : trialForm.lsDateTime.$invalid && !trialForm.lsDateTime.$pristine }" ng-model="lsDateTime" required/>
+                        <input id="stCity" class="form-md" name="stCity" placeholder="Город" type="text" ng-class="{ 'has-error' : trialForm.stCity.$invalid && !trialForm.stCity.$pristine }" ng-model="stCity" required/>
+                        <input id="stAge" class="form-md" name="stAge" placeholder="Возраст" type="number" ng-class="{ 'has-error' : trialForm.stAge.$invalid && !trialForm.stAge.$pristine }" ng-model="stAge" ng-min="3" ng-max="100" ng-change="change()" required/>
+                        <input id="stSkype" class="form-md" name="stSkype" placeholder="Skype" type="text" ng-class="{ 'has-error' : trialForm.stSkype.$invalid && !trialForm.stSkype.$pristine}" ng-model="stSkype" required/>
+                        <input type="hidden"/>
+                        <input type="hidden" name="isIos" value="true"/>
+                        <select id="lsLang" class="form-md" name="lsLang">
+                            <option value="Английский">Английский</option>
+                            <option value="Испанский">Испанский</option>
+                            <option value="Итальянский">Итальянский</option>
+                            <option value="Французский">Французский</option>
+                            <option value="Немецкий">Немецкий</option>
+                            <option value="Португальский">Португальский</option>
+                        </select>
+                        <select id="lsLevel" class="form-md" name="lsLevel">
+                            <option value="Нулевой">Нулевой</option>
+                            <option value="Средний">Средний</option>
+                            <option value="Высокий">Высокий</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="textarea-row-ios" class="">
+                    <div class="extension-col-md-6 col-md-6">
+                        <textarea id="lsComment" class="form-md text-field block-center" name="lsComment" placeholder="Текст сообщения" type="text"></textarea>
+                        <input id="trialLessonSend" type="submit" data-dismiss="modal" class="btn-send btn block-center" value="ОТПРАВИТЬ" ng-disabled="trialForm.$invalid"/>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script>
+    $(document).ready(function () {
+        if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+            $("footer").remove();
+            iosOrderFormHeightCalc();
+        }
+    });
+    function iosOrderFormHeightCalc() {
+        var windowHeight = jQuery(window).height();
+        var topBarHeight = jQuery("#tf-menu").height();
+        jQuery(".modal-content-ios").height(windowHeight - topBarHeight);
+    }
+</script>

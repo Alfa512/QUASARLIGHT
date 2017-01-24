@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;
+}
+
+@model List<QuasarLight.Domain.Models.Language>
+
+@if (Model != null && Model.Any())
+{   
+    foreach (var leng in Model)
+    {
+        <option value="@leng.Id">
+            @leng.LanguageName
+        </option>
+    }
+}

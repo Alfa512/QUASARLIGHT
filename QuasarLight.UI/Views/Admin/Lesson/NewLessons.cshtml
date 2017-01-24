@@ -1,0 +1,27 @@
+﻿@model List<QuasarLight.UI.Models.LessonVm>
+
+@{
+    Layout = null;
+}
+
+@if (Model != null && Model.Any())
+{
+    var i = 0;
+    foreach (var lesson in Model.ToList())
+    {
+        i++;
+        <tr>
+            <td>@i</td>
+            <td>@lesson.DateTime</td>
+            <td>@lesson.LessonStudent.FullName</td>
+            <td>@lesson.Language</td>
+            <td>@lesson.LessonTeacher.FullName</td>
+            <td>@lesson.LessonStudent.Skype</td>
+            <td>@lesson.LessonStudent.Email</td>
+            <td>@lesson.Comment</td>
+            <td>
+                <button id="processedLs-@lesson.Id" class="btn btn-warning" onclick="processLesson()">Обработано</button>
+            </td>
+        </tr>
+    }
+}

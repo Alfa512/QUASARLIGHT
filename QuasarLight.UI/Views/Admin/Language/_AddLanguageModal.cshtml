@@ -1,0 +1,44 @@
+﻿@{ Layout = null; }
+@model QuasarLight.UI.Models.CourseVm
+
+<div class="modal fade" id="addCrModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content form-add">
+            <div class="modal_header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="timetable-text head-add-form">Добавить курс</h4>
+            </div>
+            @using (Ajax.BeginForm("AddCourse", null, new AjaxOptions { HttpMethod = "POST" }, new { id = "addCrAjaxForm", enctype = "multipart/form-data" }))
+            {
+                <div class="col-add col-md-12">
+                    @Html.ValidationMessageFor(m => m.LanguageName)
+                    @Html.TextBoxFor(m => m.LanguageName, new { Class = "addInf", Placeholder = "Имя" })
+                </div>
+                <div class="form-group col-md-12">
+                    @Html.ValidationMessageFor(m => m.IconFile)
+                    <div class="fileform-admin">
+                        <div id="lenguageImageAddFormLabel" class="imageformlabel"></div>
+                        <div class="selectbutton">Обзор</div>
+                        @Html.TextBoxFor(m => m.IconFile, new { Name = "IconFile", type = "file", Class = "selectFile", onchange = "getName(this.value, lenguageImageAddFormLabel);" })
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <div class="progress progress-striped">
+                        <div class="progress-bar progress-bar-success">0%</div>
+                    </div>
+                </div>
+
+                <div class="col-add col-md-12">
+                    <div id="ajaxSendStatusAddCourse" class="form-group col-md-12 alert-success hidden"></div>
+                </div>
+
+                <div class="col-add col-md-12">
+                    <div class="modal_footer">
+                        <button type="button" class="btn-adds" onclick="processCourse(1)">Добавить</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

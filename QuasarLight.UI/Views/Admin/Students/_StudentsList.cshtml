@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+@model List<QuasarLight.UI.Models.StudentVm>
+
+@if (Model != null && Model.Any())
+{
+    var i = 0;
+    foreach (var s in Model)
+    {
+        i++;
+        <tr id="st-row-@s.Id">
+            <td>
+                <div id="stId-@s.Id" class="stId">@i</div>
+            </td>
+            <td>
+                <div id="stName-@s.Id" class="stName">@s.FullName</div>
+                <input id="stNameI-@s.Id" class="hidden" type="text" name="stFullFullName" value="@s.FullName" />
+            </td>
+            <td>
+                <div id="stEmail-@s.Id" class="stEmail">@s.Email</div>
+                <input id="stEmailI-@s.Id" class="hidden" type="text" name="stEmail" value="@s.Email" />
+            </td>
+            <td>
+                <div id="stSkype-@s.Id" class="stSkype">@s.Skype</div>
+                <input id="stSkypeI-@s.Id" class="hidden" type="text" name="stSkype" value="@s.Skype"/>
+            </td>
+            <td>
+                @if (s.StudentLanguage != null)
+                {
+                    <p>@s.StudentLanguage.LanguageName</p>
+                }
+                else
+                {
+                    <p class="alert-warning">Курс не назначен!</p>
+                }
+            </td>
+            <td>
+                @if (s.StudentTeacher != null)
+                {
+                    <p>@s.StudentTeacher.FullName</p>
+                }
+                else
+                {
+                    <p class="alert-warning">Преподаватель не назначен!</p>
+                }
+            </td>
+            <td>
+                <button type="button" class="btn timetable-btn" data-toggle="modal" data-target="#paytable">
+                    Оплата
+                </button>
+            </td>
+            <td>
+                <input type="button" id="ed-@s.Id" class="btn btn-warning btn-xs" value="Редактировать" data-toggle="modal" data-target="#edit-student" onclick="editStudentInitModal()" />
+                <input type="button" id="del-@s.Id" class="btn btn-danger btn-xs" value="Удалить" onclick="dellStudent()" />
+            </td>
+        </tr>
+    }
+}
+else
+{
+    <tr>
+        <td></td>
+        <td>Студентов нет</td>
+        <td></td>
+    </tr>
+}

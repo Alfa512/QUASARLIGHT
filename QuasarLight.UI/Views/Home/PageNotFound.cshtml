@@ -1,0 +1,19 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section Title
+{
+    <title>Страница не найдена</title>
+}
+
+<div class="cd-fixed-bg cd-bg-2 not-found">
+    <div class="not-found">
+        <h2>Страница не найдена!</h2>
+    </div>
+</div>
+<script>
+    $(document).ready(function() {
+        $("footer").remove();
+    });
+</script>

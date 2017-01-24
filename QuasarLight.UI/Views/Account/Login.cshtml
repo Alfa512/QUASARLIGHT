@@ -1,0 +1,41 @@
+﻿@model QuasarLight.UI.Models.LoginVm
+
+@{
+    
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+<title>@ViewBag.Title</title>
+
+
+<div class="login-form">
+    <div class="container">
+        <div class="avt-title">
+            <h3>Пройдите авторизацию</h3>
+        </div>
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
+        {
+            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+            <div class="col-md-12">
+                <div class="col-md-1 font-log">Логин: </div>
+                <div class="col-md-2 col-lg-2 ">
+                    @Html.ValidationMessageFor(r => r.Email)
+                    @Html.TextBoxFor(m => m.Email, new { Name = "Email", Class = "log", Placeholder = "Введите логин" })
+                </div>
+            </div>
+            <div class="deriver"></div>
+            <div class="col-md-12">
+                <div class="col-md-1 font-log">Пароль:</div>
+                <div class="col-md-2 col-lg-2">
+                    @Html.ValidationMessageFor(r => r.Password)
+                    @Html.PasswordFor(m => m.Password, new { Name = "Password", Class = "log", Placeholder = "Введите пароль" })
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6 col-lg-6">
+                    <input type="submit" class="btn btn-adds" name="auth" value="Авторизоваться" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

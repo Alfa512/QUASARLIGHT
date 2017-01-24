@@ -1,0 +1,23 @@
+﻿@model List<QuasarLight.Domain.Models.Language>
+@{
+    Layout = null;
+}
+
+<ul id="selectLenguage" class="select-lenguage">
+    @if (Model != null && Model.Any())
+    {
+        foreach (var l in Model)
+        {
+            <li>
+                <input id="checkLeng-@l.Id" type="checkbox" name="Languages" value="@l.Id"/>
+                <label>@l.LanguageName</label>
+            </li>
+        }
+    }
+    else
+    {
+        <li>
+            Языки не заданы!
+        </li>
+    }
+</ul>

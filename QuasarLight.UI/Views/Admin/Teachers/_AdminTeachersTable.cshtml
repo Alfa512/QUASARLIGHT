@@ -1,0 +1,79 @@
+﻿@{
+    Layout = null;
+}
+@model List<QuasarLight.Domain.Models.Teacher>
+
+@if (Model != null)
+{
+    var i = 0;
+    foreach (var t in Model)
+    {
+        i++;
+        <tr>
+            <td>@i</td>
+            @if (t.FullName != null)
+            {
+                <td>
+                    @t.FullName
+                </td>
+            }
+            else
+            {
+                <td>
+                    Не указан
+                </td>
+            }
+            @if (t.Email != null)
+            {
+                <td>
+                    @t.Email
+                </td>
+            }
+            else
+            {
+                <td>Не указан</td>
+            }
+            @if (t.City != null)
+            {
+                <td>
+                    @t.City
+                </td>
+            }
+            else
+            {
+                <td>Не указан</td>
+            }
+            else
+            {
+                <td>Не указана</td>
+            }
+            @if (t.ExperienceInYears != null)
+            {
+                <td>
+                    @t.ExperienceInYears
+                </td>
+            }
+            else
+            {
+                <td>Не указан</td>
+            }
+            @if (t.Education != null)
+            {
+                <td>
+                    @t.Education
+                </td>
+            }
+            else
+            {
+                <td>Не указан</td>
+            }
+            <td>
+                <button type="button" class="btn timetable-btn" data-toggle="modal" data-target="#ModalTimeT" onclick="setTimeTable(@t.Id)">Расписание</button>
+            </td>
+            <td>
+                <input id="@t.Id" type="button" class="btn btn-warning btn-xs" value="Редактировать" data-toggle="modal" data-target="#editTeacherModal" onclick="editTeacherInitModal();"/>
+                <input id="@t.Id" type="button" class="btn btn-danger btn-xs" value="Удалить" onclick="dellTeacher()" />
+            </td>
+        </tr>
+    }
+}

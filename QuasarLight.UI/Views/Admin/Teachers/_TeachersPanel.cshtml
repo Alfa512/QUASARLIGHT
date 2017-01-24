@@ -1,0 +1,124 @@
+﻿@{
+    Layout = null;
+}
+@model List<QuasarLight.UI.Models.TeacherVm>
+
+<div role="tabpanel" class="tab-pane fade in active" id="teachers">
+    <h1 class="page-header-adm">Преподователи</h1>
+
+    <button type="button" class=" btn-add" data-toggle="modal" data-target="#addTeacherModal">
+        Добавить преподавателя
+    </button>
+
+    <div class="modal fade" id="addTeacherModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content form-add">
+                @{Html.RenderAction("AddTeacherModal", "Admin");}
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="editTeacherModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div id="editTeacherModalBody" class="modal-content form-add">
+                @{Html.RenderAction("EditTeacherModal", "Admin");}
+            </div>
+        </div>
+    </div>
+
+
+    @if (Model.Count > 0)
+    {
+        foreach (var t in Model)
+        {
+            <div class="modal fade" id="ModalTimeT-@t.Id" tabindex="-1" role="dialog" aria-labelledby="ttModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content form-add">
+                        <div class="modal_header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="timetable-text head-add-form" id="ttModalLabel">Расписание</h4>
+                        </div>
+                        <table class="table table-striped text-color-adm">
+                            <thead>
+                                <tr>
+                                    <th>Время</th>
+                                    <th>Понедельник</th>
+                                    <th>Вторник</th>
+                                    <th>Среда</th>
+                                    <th>Четверг</th>
+                                    <th>Пятница</th>
+                                    <th>Суббота</th>
+                                </tr>
+                                <tr>
+                                    <th>8:00-9:00</th>
+                                </tr>
+                                <tr>
+                                    <th>9:00-10:00</th>
+                                </tr>
+                                <tr>
+                                    <th>10:00-11:00</th>
+                                </tr>
+                                <tr>
+                                    <th>11:00-12:00</th>
+                                </tr>
+                                <tr>
+                                    <th>12:00-13:00</th>
+                                </tr>
+                                <tr>
+                                    <th>13:00-14:00</th>
+                                </tr>
+                                <tr>
+                                    <th>14:00-15:00</th>
+                                </tr>
+                                <tr>
+                                    <th>15:00-16:00</th>
+                                </tr>
+                                <tr>
+                                    <th>16:00-17:00</th>
+                                </tr>
+                                <tr>
+                                    <th>17:00-18:00</th>
+                                </tr>
+                                <tr>
+                                    <th>18:00-19:00</th>
+                                </tr>
+                                <tr>
+                                    <th>19:00-20:00</th>
+                                </tr>
+                                <tr>
+                                    <th>20:00-21:00</th>
+                                </tr>
+                                <tr>
+                                    <th>21:00-22:00</th>
+                                </tr>
+
+
+                            </thead>
+                            <tbody id="timetable"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        }
+    }
+
+    <div class="table-responsive">
+        <table class="table table-striped text-color-adm">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ФИО</th>
+                    <th>E-mail</th>
+                    <th>Город</th>
+                    <th>Специализация</th>
+                    <th>Стаж</th>
+                    <th>Образование</th>
+                    <th>Расписание</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="teacherTableBody">
+                @{Html.RenderAction("GetTeachers");}
+            </tbody>
+        </table>
+    </div>
+</div>

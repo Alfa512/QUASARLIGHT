@@ -1,0 +1,15 @@
+﻿@{
+    Layout = null;   
+}
+
+@model List<QuasarLight.Domain.Models.Teacher>
+
+@if (Model != null && Model.Any())
+{
+    foreach (var teacher in Model)
+    {
+        <option value="@teacher.Id">
+            @teacher.FullName
+        </option>
+    }
+}

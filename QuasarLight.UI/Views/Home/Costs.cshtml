@@ -1,0 +1,13 @@
+﻿@{
+    Layout = "../Shared/_Layout.cshtml";
+}
+
+@section Title
+{
+    <title>Dialogue Платежи</title>
+}
+
+<input id="load-requisites-request-modal-url" type="hidden" value="@Url.Action("RequisitesRequestModal", "Home")"/>
+@Html.Partial("_Russians")
+@Html.Partial("_NativeSpeakers")
+@Scripts.Render("~/bundles/costs")

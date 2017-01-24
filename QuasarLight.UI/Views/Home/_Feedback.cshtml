@@ -1,0 +1,27 @@
+﻿@model QuasarLight.Domain.Models.Feedback
+
+@{
+    Layout = null;
+}
+
+@if (Model != null)
+{
+    <div class="feedback">
+        <div class="feedback-image">
+            <a href="~/feedback#feedback-@Model.Id">
+                <img class="teacher-img" src="@Model.Image" alt=""/>
+            </a>
+        </div>
+        <div class="feedback-text">
+            <div class="feedback-main-text">
+                <div class="wrapped-text">
+                    @Html.Raw(@Model.Text)
+                </div>
+            </div>
+            <div class="feedback-autor">
+                @Html.Raw(Model.Autor)
+                <a href="~/feedback#feedback-@Model.Id">Cмотреть полностью</a>
+            </div>
+        </div>
+    </div>
+}

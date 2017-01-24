@@ -1,0 +1,178 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Dialogue</title>
+
+    <link href="~/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
+</head>
+<body>
+    <div class="container-fluid full-size">
+        <div class="col-md-12 row">
+            <div class="col-md-2 sidebar full-size">
+                <ul class="nav nav-sidebar adm-nav" role="tablist">
+                    <li role="presentation"><a href="@Url.Action("Index", "Home")">На главную</a></li>
+                    <li role="presentation" class="active act-nav"><a href="#teachers" ria-controls="teacher" role="tab" data-toggle="tab">Преподователи</a></li>
+                    <li role="presentation"><a href="#students" aria-controls="students" role="tab" data-toggle="tab">Студенты</a></li>
+                    <li role="presentation"><a href="#payments" aria-controls="payments" role="tab" data-toggle="tab">Платежи</a></li>
+                    <li role="presentation"><a href="#notes" aria-controls="notes" role="tab" data-toggle="tab">Заявки на пробный урок</a></li>
+                    <li role="presentation"><a href="#courses" aria-controls="notes" role="tab" data-toggle="tab">Список курсов</a></li>
+                    <li role="presentation"><a href="#debt" aria-controls="notes" role="tab" data-toggle="tab">На оплату</a></li>
+                    <li role="presentation"><a href="@Url.Action("LogOff", "Account")">Выход</a></li>
+                </ul>
+            </div>
+            <div class="col-md-10 main tab-content">
+
+                @Html.Action("TeachersPanel")
+                @Html.Action("StudentsPanel")
+                @Html.Partial("Language/_LanguagePanel")
+
+                <div role="tabpanel" class="tab-pane fade" id="payments">
+                    <h1 class="page-header-adm">Платежи</h1>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped text-color-adm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Студент</th>
+                                    <th>Skype</th>
+                                    <th>Дата проведения вводного урока</th>
+                                    <th>Оплачено занятий</th>
+                                    <th>Осталось занятий</th>
+                                    <th>Тип курса</th>
+                                    <th>Продолжительность</th>
+                                    <th>Дата</th>
+                                    <th>Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="notes">
+                    <h1 class="page-header-adm">Заявки на пробный урок</h1>
+                    <div class="row">
+                        <ul class="nav nav-sidebar" role="tablist">
+
+                            <li role="presentation" class="text-center switch-btn active col-md-1">
+                                <a href="#newLessons" class="btn-lesson" ria-controls="lessons" role="tab" data-toggle="tab">Новые</a>
+                            </li>
+                            <li role="presentation" class="text-center switch-btn col-md-1">
+                                <a href="#oldLessons" class="btn-lesson" ria-controls="lessons" role="tab" data-toggle="tab">Старые</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane fade in active" id="newLessons">
+                            <div class="table-responsive">
+                                <table class="table table-striped text-color-lessons">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Дата пробного урока</th>
+                                            <th>Студент</th>
+                                            <th>Язык</th>
+                                            <th>Преподаватель</th>
+                                            <th>Skype студента</th>
+                                            <th>E-mail</th>
+                                            <th>Доп. Информация</th>
+                                            <th>Обработать</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @Html.Action("GetNewLessons")
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div role="tabpanel" class="tab-pane fade" id="oldLessons">
+                            <div class="table-responsive">
+                                <table class="table table-striped text-color-lessons">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Дата пробного урока</th>
+                                            <th>Студент</th>
+                                            <th>Язык</th>
+                                            <th>Преподаватель</th>
+                                            <th>Skype студента</th>
+                                            <th>E-mail</th>
+                                            <th>Доп. Информация</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    @Html.Action("GetFinishedLessons")
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="debt">
+                    <h1 class="page-header-adm">На оплату</h1>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped text-color-adm">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Студент</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Вася</td>
+                                    <td>
+                                        <button class="btn btn-debt" type="submit">Оповестить</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="window-resizer-tooltip"><a href="#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth"></span> x <span class="tooltipHeight" id="winHeight"></span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth"></span> x <span class="tooltipHeight" id="vpHeight"></span></div>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/admin")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script type="text/javascript">
+        jQuery(function ($) {
+            $('body').on('click', '.trigger', function (e) {
+                e.preventDefault();
+                $('#test-modal').modal().open();
+            });
+
+            $('.modal .close').on('click', function (e) {
+                e.preventDefault();
+                $.modal().close();
+            });
+
+            $('.modal .more-toggle').on('click', function (e) {
+                e.stopPropagation();
+                $('.modal .more').toggle();
+            });
+        });
+    </script>
+
+    <script>
+        $(function () {
+            $('#myTab a[href="#profile"]').tab("show");
+        })
+    </script>
+
+</body>
+</html>

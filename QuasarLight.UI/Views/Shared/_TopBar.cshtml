@@ -1,0 +1,28 @@
+﻿@{ Layout = null; }
+
+<nav id="tf-menu" class="navbar navbar-default navbar-fixed-top">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed btn-collapsed" data-toggle="collapse"
+                data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand logo" href="@Url.Action("Index", "Home")"></a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right btn-top-bar">
+            <li><a href="#" id="how-it-works" class="page-scroll">Ближайшие тренировки</a></li>
+            <li><a href="#" id="teachers" class="page-scroll">Участники</a></li>
+            <li><a href="#" id="photos" class="page-scroll">Фото</a></li>
+            <li><a href="#" id="videos" class="page-scroll">Видео</a></li>
+            @*<li><a href="@Url.RouteUrl("order-lessons")" id="order-lessons" class="page-scroll">Стоимость</a></li>
+            <li><a href="@Url.RouteUrl("courses")" id="courses" class="page-scroll">Курсы</a></li>
+            <li><a href="@Url.RouteUrl("feedback")" id="feedbacks" class="page-scroll">Отзывы</a></li>
+            <li class="button-note">
+                <button id="trial-lesson-btn" type="button" class="btn btn-st trigger btn-up" data-toggle="modal" data-target="#trial-lesson-dialog" onclick="loadTrialModal()">ЗАПИСАТЬСЯ</button>
+            </li>*@
+        </ul>
+    </div>
+</nav>

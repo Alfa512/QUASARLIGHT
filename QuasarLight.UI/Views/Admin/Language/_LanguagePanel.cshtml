@@ -1,0 +1,29 @@
+﻿@{
+    Layout = null;
+}
+
+<div role="tabpanel" class="tab-pane fade" id="courses">
+    <h1 class="page-header-adm">Курсы</h1>
+    <button type="button" class="btn btn-add" data-toggle="modal" data-target="#addCrModal">
+        Добавить курс
+    </button>
+    @Html.Partial("Language/_AddLanguageModal");
+    <div class="table-responsive">
+        <table id="languages-table" class="table table-striped text-color-adm">
+            <thead>
+            <tr>
+                <th>#</th>
+                <th>Язык</th>
+                <th>Изображение</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="adminLanguagesList">
+            @Html.Action("GetCourseList");
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="edit-language" tabindex="-1" role="dialog">
+        @Html.Partial("Language/_EditLanguageModal");
+    </div>
+</div>

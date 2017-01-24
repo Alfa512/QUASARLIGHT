@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26020.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuasarLight.UI", "QuasarLight.UI\QuasarLight.UI.csproj", "{CB45EA67-2903-4FD4-83B8-FB77B716215A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1} = {947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuasarLight.Domain", "QuasarLight.Domain\QuasarLight.Domain.csproj", "{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB45EA67-2903-4FD4-83B8-FB77B716215A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB45EA67-2903-4FD4-83B8-FB77B716215A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB45EA67-2903-4FD4-83B8-FB77B716215A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB45EA67-2903-4FD4-83B8-FB77B716215A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947EFA9E-B432-4EF5-9FB6-C524D1DFC2A1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
