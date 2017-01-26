@@ -16,7 +16,7 @@ namespace QuasarLight.UI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
                 
-            FluentValidationModelValidatorProvider.Configure();
+            //FluentValidationModelValidatorProvider.Configure();
 
             Bootstrapper.Start();
         }
