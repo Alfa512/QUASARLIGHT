@@ -1,13 +1,10 @@
 ﻿using System.Web.Mvc;
-using Incoding.CQRS;
-using Incoding.MvcContrib;
-using QuasarLight.Domain.CQRS.Commands;
 using QuasarLight.Domain.Infrastructure;
 using QuasarLight.Domain.Models;
 
 namespace QuasarLight.UI.Controllers
 {
-    public class PaymentController : IncControllerBase
+    public class PaymentController : Controller
     {
         public ActionResult PaymentRequisitesForm(string name)
         {
@@ -17,7 +14,7 @@ namespace QuasarLight.UI.Controllers
         [HttpPost]
         public object SendPaymentRequisitesToStudent(string name, string email)
         {
-            var body = RenderToString("_PaymentRequisitesForm", name);
+            /*var body = RenderToString("_PaymentRequisitesForm", name);
 
             dispatcher.Push(new SendMessageCommand(new Email
             {
@@ -27,7 +24,7 @@ namespace QuasarLight.UI.Controllers
                 FromName = MailSettings.FromName,
                 Subject = "Онлайн-школа \"Dialogue\"",
                 Body = body
-            }));
+            }));*/
             return true;
         }
     }

@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Web;
-using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Security;
-using Incoding.CQRS;
-using Incoding.MvcContrib;
-using QuasarLight.Domain.Models;
+using QuasarLight.Data.Model.DataModel;
 using QuasarLight.UI.Models;
 
 namespace QuasarLight.UI.Controllers
 {
-    public class AccountController : IncControllerBase
+    public class AccountController : Controller
     {
         public ActionResult Login()
         {
@@ -28,7 +25,7 @@ namespace QuasarLight.UI.Controllers
                 return View(model);
 
             var ticket = new FormsAuthenticationTicket(1,
-                teacher.FullName,
+                teacher.Name,
                 DateTime.Now, 
                 DateTime.Now.AddMinutes(30),
                 true,
@@ -39,7 +36,7 @@ namespace QuasarLight.UI.Controllers
 
             Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
 
-            return teacher.IsAdmin == true ? RedirectToAction("Administration", "Admin") : RedirectToAction("Index", "Home");
+            return /*teacher.IsAdmin == true ? RedirectToAction("Administration", "Admin") :*/ RedirectToAction("Index", "Home");
         }
 
         public ActionResult LogOff()
@@ -48,14 +45,16 @@ namespace QuasarLight.UI.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        public Teacher Authenticate(string name, string password)
+        public User Authenticate(string name, string password)
         {
-            var teacher = dispatcher.Query(new GetEntitiesQuery<Teacher>()).Find(r => r.Email == name);
+            var user = new User();
+            return user;
+            /*var teacher = dispatcher.Query(new GetEntitiesQuery<User>()).Find(r => r.Email == name);
             
             if (teacher == null)
                 return null;
 
-            return Crypto.VerifyHashedPassword(teacher.Password, password) ? teacher : null;
+            return Crypto.VerifyHashedPassword(teacher.Password, password) ? teacher : null;*/
         }
     }
 }

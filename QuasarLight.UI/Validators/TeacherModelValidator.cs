@@ -3,7 +3,7 @@ using QuasarLight.UI.Models;
 
 namespace QuasarLight.UI.Validators
 {
-    public class TeacherModelValidator : AbstractValidator<TeacherVm>
+    /*public class TeacherModelValidator : AbstractValidator<TeacherVm>
     {
         public TeacherModelValidator()
         {
@@ -14,5 +14,5 @@ namespace QuasarLight.UI.Validators
             RuleFor(m => m.ExperienceInYears).NotEmpty().WithMessage("Укажите стаж!");
             RuleFor(m => m.Description).NotEmpty().WithMessage("Введите описание!");
         }
-    }
+    }*/
 }

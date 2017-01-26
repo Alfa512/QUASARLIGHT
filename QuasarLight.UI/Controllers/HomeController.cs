@@ -1,9 +1,8 @@
 ﻿using System.Web.Mvc;
-using Incoding.MvcContrib;
 
 namespace QuasarLight.UI.Controllers
 {
-    public class HomeController : IncControllerBase
+    public class HomeController : Controller
     {
         public ActionResult Index()
         {

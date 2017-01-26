@@ -5,9 +5,8 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using FluentValidation.Mvc;
 using QuasarLight.Domain.Infrastructure;
-using QuasarLight.UI;
 
-namespace QuasarLight
+namespace QuasarLight.UI
 {
     public class MvcApplication : HttpApplication
     {
