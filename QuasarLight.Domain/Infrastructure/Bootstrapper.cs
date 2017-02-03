@@ -3,22 +3,22 @@ using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Routing;
 using FluentValidation;
-using Incoding.Block.IoC;
-using Incoding.CQRS;
-using Incoding.Data;
-using Incoding.EventBroker;
-using Incoding.MvcContrib;
+//using Incoding.Block.IoC;
+//using Incoding.CQRS;
+//using Incoding.Data;
+//using Incoding.EventBroker;
+//using Incoding.MvcContrib;
 using StructureMap.Graph;
 
 namespace QuasarLight.Domain.Infrastructure
 {
-    public class IncControllerFactory : DefaultControllerFactory
+    /*public class IncControllerFactory : DefaultControllerFactory
     {
         protected override IController GetControllerInstance(RequestContext requestContext, Type controllerType)
         {
             return controllerType == null ? base.GetControllerInstance(requestContext, null) : IoCFactory.Instance.Resolve<IController>(controllerType);
         }
-    }
+    }*/
 
     public static class Bootstrapper
     {
@@ -30,10 +30,10 @@ namespace QuasarLight.Domain.Infrastructure
             MailSettings.SubAccount = WebConfigurationManager.AppSettings["SubAccount"];
             MailSettings.MandrillApi = WebConfigurationManager.AppSettings["MandrillApi"];
 
-            InitializeContainer();
+            //InitializeContainer();
         }
 
-        public static void InitializeContainer()
+        /*public static void InitializeContainer()
         {
             ControllerBuilder.Current.SetControllerFactory(new IncControllerFactory());
             IoCFactory.Instance.Initialize(init => init.WithProvider(new StructureMapIoCProvider(r =>
@@ -63,6 +63,6 @@ namespace QuasarLight.Domain.Infrastructure
                     rg.Assembly("QuasarLight.Domain");
                 });
             })));
-        }
+        }*/
     }
 }
