@@ -820,11 +820,11 @@ li.enroll {
         /*-webkit-text-stroke-width: 1px;
         -webkit-text-stroke-color: #f77807;*/
         font-size: 50px;
-        margin-top: 250px;
+        margin-top: 170px;
     }
 
     .inf-block h3 {
-        margin-top: 20px;
+        margin-top: 100px;
         letter-spacing: 1px;
         font-family: CentSchbook_Win95Bt;
         line-height: 1.3em;
@@ -981,7 +981,7 @@ li.enroll {
 }
 
 .color-scheme-3 img {
-    padding-bottom: 15px;
+    /*padding-bottom: 15px;*/
     height: 128px;
     width: 128px;
 }
@@ -3187,6 +3187,10 @@ table.cost_section th {
     #trial-lesson-dialog #inputs-row {
         position: relative;
         height: 50%;
+    }
+
+    .links {
+        margin-bottom: 10px;
     }
 }
 

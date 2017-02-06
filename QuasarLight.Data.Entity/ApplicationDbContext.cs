@@ -12,7 +12,7 @@ namespace QuasarLight.Data.Entity
 {
     public class ApplicationDbContext : IdentityDbContext<User>, IDataContext
     {
-        public ApplicationDbContext() : base("MainConnection")
+        public ApplicationDbContext() : base("Main")
         {
             Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
         }

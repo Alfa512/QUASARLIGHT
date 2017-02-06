@@ -5,7 +5,7 @@ namespace QuasarLight.UI
 {
     public class RouteConfig
     {
-        private static readonly string[] Courses = { "english", "french", "italian", "spanish", "german", "portuguese" };
+        /*private static readonly string[] Courses = { "english", "french", "italian", "spanish", "german", "portuguese" };
 
         private static void MapCourses(RouteCollection routes)
         {
@@ -16,13 +16,13 @@ namespace QuasarLight.UI
                     url: course,
                     defaults: new { controller = "Course", action = course });
             }
-        }
+        }*/
 
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            MapCourses(routes);
+            //MapCourses(routes);
 
             routes.MapRoute(
                 name: "teachers",

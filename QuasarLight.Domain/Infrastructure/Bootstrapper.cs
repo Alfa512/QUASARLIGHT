@@ -1,14 +1,12 @@
-using System;
+using System.Reflection;
 using System.Web.Configuration;
-using System.Web.Mvc;
-using System.Web.Routing;
-using FluentValidation;
+using Autofac;
+using QuasarLight.Data.Entity;
 //using Incoding.Block.IoC;
 //using Incoding.CQRS;
 //using Incoding.Data;
 //using Incoding.EventBroker;
 //using Incoding.MvcContrib;
-using StructureMap.Graph;
 
 namespace QuasarLight.Domain.Infrastructure
 {
@@ -30,9 +28,49 @@ namespace QuasarLight.Domain.Infrastructure
             MailSettings.SubAccount = WebConfigurationManager.AppSettings["SubAccount"];
             MailSettings.MandrillApi = WebConfigurationManager.AppSettings["MandrillApi"];
 
-            //InitializeContainer();
+            //var start = new Startup();
+
+            InitializeContainer();
         }
 
+        public static void InitializeContainer()
+        {
+            /*var container = new Container(c =>
+            {
+                c.For<IAppBuilder>().Use<AppBuilder>();
+                c.For<IBar>().Use<Bar>();
+                c.For<IDataContext>().Use<ApplicationDbContext>().Ctor<string>().Is("Main");
+            });
+
+            GlobalConfiguration.Configuration.DependencyResolver = new StructureMapWebApiDependencyResolver(container);*/
+
+            var builder = new ContainerBuilder();
+
+            builder.RegisterType<ApplicationDbContext>()
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope();
+
+            var dataAccess = Assembly.GetExecutingAssembly();
+
+            builder.RegisterAssemblyTypes(dataAccess)
+                   .Where(t => t.Name.EndsWith("QuasarLight.UI"))
+                   .AsImplementedInterfaces();
+
+            /*builder.Register<IMappingEngine>(c => Mapper.Engine);
+            builder.Register(ctx => new ConfigurationStore(new TypeMapFactory(), MapperRegistry.AllMappers()))
+       .AsImplementedInterfaces()
+       .SingleInstance();*/
+
+
+            /*var configure = Fluently
+                       .Configure()
+                       .Database(MsSqlConfiguration.MsSql2012.ConnectionString(ConfigurationManager.ConnectionStrings["Main"].ConnectionString))
+                       //.Mappings(m => m.FluentMappings.AddFromAssemblyOf<Us.TeacherMap>())
+                       .ExposeConfiguration(cfg => new SchemaUpdate(cfg).Execute(false, true))
+                       .CurrentSessionContext<NhibernateSessionContext>()
+                       .BuildSessionFactory();
+            r.For<INhibernateSessionFactory>().Singleton().Use(() => new NhibernateSessionFactory(configure));*/
+        }
         /*public static void InitializeContainer()
         {
             ControllerBuilder.Current.SetControllerFactory(new IncControllerFactory());

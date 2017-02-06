@@ -9,6 +9,5 @@ namespace QuasarLight.Common.Contracts.Data
         IUserRepository Users { get; }
         IUserImageRepository UserImages { get; }
         IImageRepository Images { get; }
-
     }
 }

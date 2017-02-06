@@ -3,7 +3,6 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
-using FluentValidation.Mvc;
 using QuasarLight.Domain.Infrastructure;
 
 namespace QuasarLight.UI
@@ -19,6 +18,8 @@ namespace QuasarLight.UI
             //FluentValidationModelValidatorProvider.Configure();
 
             Bootstrapper.Start();
+            //var start = new Startup();
+            //start.Configuration();
         }
 
         void Application_Error(object sender, EventArgs e)
