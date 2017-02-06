@@ -245,6 +245,10 @@
     <Content Include="Content\fonts\glyphicons.social.pro\glyphicons-social-regular.svg" />
     <Content Include="Content\images\alfa512ks%40mail.ru.jpg" />
     <Content Include="Content\images\English.jpg" />
+    <Content Include="Content\images\products\quasar-2.jpg" />
+    <Content Include="Content\images\products\quasar-3.jpg" />
+    <Content Include="Content\images\products\quasar-4.jpg" />
+    <Content Include="Content\images\products\quasar.jpg" />
     <Content Include="Content\img\bar-orig.jpg" />
     <Content Include="Content\img\bar.jpg" />
     <Content Include="Content\img\bg-blog.jpg" />
@@ -343,6 +347,7 @@
     <Content Include="Content\img\po-min.jpg" />
     <Content Include="Content\img\poster.jpg" />
     <Content Include="Content\img\prepare-to-exam-min.jpg" />
+    <Content Include="Content\img\quasar-light-logo-2.png" />
     <Content Include="Content\img\quasar-light-logo.png" />
     <Content Include="Content\img\remote.png" />
     <Content Include="Content\img\sevilla-sevilya-plaza-de.jpg" />
@@ -478,6 +483,7 @@
     <Content Include="Views\Admin\Lesson\NewLessons.cshtml" />
     <Content Include="Views\Admin\Lesson\FinishedLessons.cshtml" />
     <None Include="Properties\PublishProfiles\sundaymtb - Web Deploy.pubxml" />
+    <Content Include="Views\_ViewStart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
