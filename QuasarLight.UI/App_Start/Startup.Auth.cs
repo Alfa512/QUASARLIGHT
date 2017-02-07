@@ -12,7 +12,9 @@ using QuasarLight.Common.Modules;
 using QuasarLight.Common.Utils;
 using QuasarLight.Data.Entity;
 using QuasarLight.Data.Model.DataModel;
+using QuasarLight.UI;
 
+[assembly: OwinStartup(typeof(Startup))]
 namespace QuasarLight.UI
 {
     public partial class Startup

@@ -1,41 +1,266 @@
-﻿@model QuasarLight.UI.Models.LoginVm
-
+﻿@model QuasarLight.Data.Model.ViewModel.AuthorizeViewModel
 @{
-    
     Layout = "../Shared/_Layout.cshtml";
 }
 
-<title>@ViewBag.Title</title>
+@section Title
+{
+    <title>Quasar Light Ассортимент</title>
+}
 
 
-<div class="login-form">
-    <div class="container">
-        <div class="avt-title">
-            <h3>Пройдите авторизацию</h3>
+<h2>@ViewBag.Title.</h2>
+@*<div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new {ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <p>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+                     Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>
+                }
+            </section>
         </div>
-        @using (Html.BeginForm("Login", "Account", FormMethod.Post))
-        {
-            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
-            <div class="col-md-12">
-                <div class="col-md-1 font-log">Логин: </div>
-                <div class="col-md-2 col-lg-2 ">
-                    @Html.ValidationMessageFor(r => r.Email)
-                    @Html.TextBoxFor(m => m.Email, new { Name = "Email", Class = "log", Placeholder = "Введите логин" })
+        <div class="col-md-4">
+            <section id="socialLoginForm">
+                @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+            </section>
+        </div>
+    </div>*@
+<img src="~/Content/img/backgrounds/login_full_bg-blur.jpg" alt="Login Full Background" class="full-bg login-img animation-pulseSlow">
+<!-- END Login Full Background -->
+<!-- Login Container -->
+<div id="login-container" class="animation-fadeIn">
+    <!-- Login Title -->
+    <div class="login-title text-center">
+        <h1>@*<i class="gi gi-flash"></i>*@ <strong>Ridersbook</strong><br><small>Пожалуйста, <strong>Войдите</strong> или <strong>Зарегистрируйтесь</strong></small></h1>
+    </div>
+    <!-- END Login Title -->
+    <!-- Login Block -->
+    <div class="block push-bit">
+        <!-- Login Form -->
+        @using (Html.BeginForm("Login", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { id = "form-login", @class = "form-horizontal form-bordered form-control-borderless", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon icon-auth"><i class="gi gi-envelope"></i></span>
+                        @Html.EditorFor(m => m.Email, new { htmlAttributes = new { id = "login-email", @class = "form-control input-lg", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
                 </div>
             </div>
-            <div class="deriver"></div>
-            <div class="col-md-12">
-                <div class="col-md-1 font-log">Пароль:</div>
-                <div class="col-md-2 col-lg-2">
-                    @Html.ValidationMessageFor(r => r.Password)
-                    @Html.PasswordFor(m => m.Password, new { Name = "Password", Class = "log", Placeholder = "Введите пароль" })
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon icon-auth"><i class="gi gi-asterisk"></i></span>
+                        @*<input type="password" id="login-password" name="login-password" class="form-control input-lg" placeholder="Пароль">*@
+                        @Html.EditorFor(m => m.Password, new { htmlAttributes = new { id = "login-password", @class = "form-control input-lg", placeholder = "Пароль" } })
+                        @Html.ValidationMessageFor(model => model.Password)
+                    </div>
                 </div>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-6 col-lg-6">
-                    <input type="submit" class="btn btn-adds" name="auth" value="Авторизоваться" />
+                <div class="form-group form-actions">
+                    <div class="col-xs-4">
+                        <label class="switch switch-primary" data-toggle="tooltip" title="Запомнить?">
+                            <input type="checkbox" id="login-remember-me" name="RememberMe" checked>
+                            @*@Html.EditorFor(m => m.RememberMe, new { htmlAttributes = new { id = "login-remember-me", @class = "", @checked = true, type = "checkbox" } })*@
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-xs-8 text-right">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Авторизация</button>
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <div class="col-xs-12 text-center">
+                        <a href="javascript:void(0)" id="link-reminder-login"><small>Забыли пароль?</small></a> -
+                        <a href="javascript:void(0)" id="link-register-login"><small>Регистрация</small></a>
+                    </div>
+                </div>
         }
+        <!-- END Login Form -->
+        <!-- Reminder Form -->
+        @using (Html.BeginForm("ResetPassword", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { id = "form-reminder", @class = "form-horizontal form-bordered form-control-borderless display-none", role = "form" }))
+            {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                        @*<input type="text" id="reminder-email" name="reminder-email" class="form-control input-lg" placeholder="Email">*@
+                        @Html.EditorFor(m => m.Email, new { htmlAttributes = new { id = "reminder-email", @class = "form-control input-lg", placeholder = "Email" } })
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </div>
+                </div>
+            </div>
+            <div class="form-group form-actions">
+                <div class="col-xs-12 text-right">
+                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Сбросить пароль</button>
+                </div>
+            </div>
+                <div class="form-group">
+                    <div class="col-xs-12 text-center">
+                        <small>Вспомнили пароль?</small> <a href="javascript:void(0)" id="link-reminder"><small>Войти</small></a>
+                    </div>
+                </div>
+        }
+        <!-- END Reminder Form -->
+        <!-- Register Form -->
+        @using (Html.BeginForm("Register", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { id = "form-register", @class = "form-horizontal form-bordered form-control-borderless display-none", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <div class="col-xs-6">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                        @*<input type="text" id="register-firstname" name="Name" class="form-control input-lg" placeholder="Имя">*@
+                        @Html.EditorFor(m => m.Name, new { htmlAttributes = new { id = "register-firstname", @class = "form-control input-lg", placeholder = "Имя" } })
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </div>
+                </div>
+                <div class="col-xs-6">
+                    @*<input type="text" id="register-lastname" name="Lastname" class="form-control input-lg" placeholder="Фамилия">*@
+                    @Html.EditorFor(m => m.LastName, new { htmlAttributes = new { id = "register-lastname", @class = "form-control input-lg", placeholder = "Фамилия" } })
+                    @Html.ValidationMessageFor(model => model.LastName)
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-xs-12">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                        @Html.EditorFor(m => m.Login, new { htmlAttributes = new { id = "register-login", @class = "form-control input-lg", placeholder = "Логин" } })
+                        @Html.ValidationMessageFor(model => model.Login)
+                    </div>
+                </div>
+            </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="gi gi-envelope"></i></span>
+                            @*<input type="text" id="register-email" name="Email" class="form-control input-lg" placeholder="Email">*@
+                            @Html.EditorFor(m => m.Email, new { htmlAttributes = new { id = "register-email", @class = "form-control input-lg", placeholder = "Email" } })
+                            @Html.ValidationMessageFor(model => model.Email)
+                            @*@Html.EditorFor(m => m.Email, new { htmlAttributes = new { id = "register-email", @class = "form-control input-lg", placeholder = "Email" } })*@
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                            @*<input type="password" id="register-password" name="Password" class="form-control input-lg" placeholder="Пароль">*@
+                            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { id = "register-password", @class = "form-control input-lg", placeholder = "Пароль" } })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="gi gi-asterisk"></i></span>
+                            @*<input type="password" id="register-password-verify" name="ConfirmPassword" class="form-control input-lg" placeholder="Подтвердите пароль">*@
+                            @Html.EditorFor(m => m.ConfirmPassword, new { htmlAttributes = new { id = "register-password-verify", @class = "form-control input-lg", placeholder = "Подтвердите пароль" } })
+                            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group form-actions">
+                    <div class="col-xs-6">
+                        <a href="#modal-terms" data-toggle="modal" class="register-terms">Правила и соглашения</a>
+                        <label class="switch switch-primary" data-toggle="tooltip" title="Правила и соглашения">
+                            <input type="checkbox" id="register-terms" name="AcceptTerms">
+                            <span></span>
+                        </label>
+                    </div>
+                    <div class="col-xs-6 text-right">
+                        <button id="register-submit" type="submit" class="btn btn-sm btn-success" disabled><i class="fa fa-plus"></i> Зарегистрироваться</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 text-center">
+                        <small>Уже есть аккаунт?</small> <a href="javascript:void(0)" id="link-register"><small>Войти</small></a>
+                    </div>
+                </div>
+        }
+        <!-- END Register Form -->
+    </div>
+    <!-- END Login Block -->
+</div>
+<!-- END Login Container -->
+<!-- Modal Terms -->
+<div id="modal-terms" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Условия соглашения</h4>
+            </div>
+            <div class="modal-body">
+                @*<h4>Title</h4>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Title</h4>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <h4>Title</h4>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Donec lacinia venenatis metus at bibendum? In hac habitasse platea dictumst. Proin ac nibh rutrum lectus rhoncus eleifend. Sed porttitor pretium venenatis. Suspendisse potenti. Aliquam quis ligula elit. Aliquam at orci ac neque semper dictum. Sed tincidunt scelerisque ligula, et facilisis nulla hendrerit non. Suspendisse potenti. Pellentesque non accumsan orci. Praesent at lacinia dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>*@
+            </div>
+        </div>
     </div>
 </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/login")
+    <script>
+        $(function () { Login.init(); });
+        function triggerChange(){
+            $("#register-terms").trigger("change");
+        }
+
+        $("#register-terms").change(function () {
+            if ($("#register-terms").prop("checked"))
+                $("#register-submit").attr("disabled", false);
+            else
+                $("#register-submit").attr("disabled", true);
+
+        });
+    </script>
+}

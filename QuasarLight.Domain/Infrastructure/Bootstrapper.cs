@@ -1,6 +1,9 @@
+using System;
 using System.Reflection;
 using System.Web.Configuration;
 using Autofac;
+using Microsoft.Owin.Builder;
+using Owin;
 using QuasarLight.Data.Entity;
 //using Incoding.Block.IoC;
 //using Incoding.CQRS;
@@ -43,8 +46,10 @@ namespace QuasarLight.Domain.Infrastructure
             });
 
             GlobalConfiguration.Configuration.DependencyResolver = new StructureMapWebApiDependencyResolver(container);*/
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
 
             var builder = new ContainerBuilder();
+            builder.RegisterType<AppBuilder>().As<IAppBuilder>();
 
             builder.RegisterType<ApplicationDbContext>()
                 .AsImplementedInterfaces()
@@ -52,8 +57,8 @@ namespace QuasarLight.Domain.Infrastructure
 
             var dataAccess = Assembly.GetExecutingAssembly();
 
-            builder.RegisterAssemblyTypes(dataAccess)
-                   .Where(t => t.Name.EndsWith("QuasarLight.UI"))
+            builder.RegisterAssemblyTypes(assemblies)
+                   .Where(t => t.Name.EndsWith("QuasarLight"))
                    .AsImplementedInterfaces();
 
             /*builder.Register<IMappingEngine>(c => Mapper.Engine);

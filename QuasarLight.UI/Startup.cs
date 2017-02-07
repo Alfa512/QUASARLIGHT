@@ -1,8 +1,5 @@
-﻿using Microsoft.Owin;
-using Owin;
-using QuasarLight.UI;
+﻿using Owin;
 
-[assembly: OwinStartup(typeof(Startup))]
 namespace QuasarLight.UI
 {
     public partial class Startup

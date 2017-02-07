@@ -93,8 +93,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.Owin, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Owin.2.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -190,9 +194,6 @@
     <Reference Include="Owin">
       <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.Owin.Host.SystemWeb">
-      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.2.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Owin.Security.Facebook">
       <HintPath>..\packages\Microsoft.Owin.Security.Facebook.2.0.0\lib\net45\Microsoft.Owin.Security.Facebook.dll</HintPath>
     </Reference>
@@ -211,6 +212,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Infrastructure\AuthAttribute.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -439,7 +441,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Product\Products.cshtml" />
-    <Content Include="Views\Teacher\Index.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Costs.cshtml" />
     <Content Include="Views\Admin\Administration.cshtml" />
@@ -455,20 +456,12 @@
     <Content Include="Views\Payment\_PaymentRequisitesForm.cshtml" />
     <Content Include="Views\Product\_AddTrialLessonNotification.cshtml" />
     <Content Include="Views\Admin\Teachers\_EditTeacherModal.cshtml" />
-    <Content Include="Views\Course\English.cshtml" />
-    <Content Include="Views\Course\Spanish.cshtml" />
-    <Content Include="Views\Course\German.cshtml" />
-    <Content Include="Views\Course\French.cshtml" />
-    <Content Include="Views\Course\Italian.cshtml" />
-    <Content Include="Views\Course\Portuguese.cshtml" />
     <Content Include="Views\Admin\_SelectLenguageBox.cshtml" />
     <Content Include="Views\Admin\Language\_LanguageSelectList.cshtml" />
     <Content Include="Views\Admin\Language\_LanguagePanel.cshtml" />
     <Content Include="Views\Admin\Language\_AdminLanguagesList.cshtml" />
     <Content Include="Views\Admin\Language\_AddLanguageModal.cshtml" />
     <Content Include="Views\Admin\Language\_EditLanguageModal.cshtml" />
-    <Content Include="Views\Teacher\_Teacher.cshtml" />
-    <Content Include="Views\Teacher\_TeacherModalContent.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_TopBar.cshtml" />
     <Content Include="Views\Shared\_TrialLessonMessage.cshtml" />
@@ -484,6 +477,10 @@
     <Content Include="Views\Admin\Lesson\FinishedLessons.cshtml" />
     <None Include="Properties\PublishProfiles\sundaymtb - Web Deploy.pubxml" />
     <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Account\ResetPassword.cshtml" />
+    <Content Include="Views\Error\PageNotFound.cshtml" />
+    <Content Include="Views\Error\ServerError.cshtml" />
+    <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -532,6 +529,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

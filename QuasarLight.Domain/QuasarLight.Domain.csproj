@@ -141,7 +141,6 @@
     <Compile Include="Infrastructure\IRegexUtilities.cs" />
     <Compile Include="Infrastructure\MailSettings.cs" />
     <Compile Include="Infrastructure\RegexUtilities.cs" />
-    <Compile Include="Models\Email.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
