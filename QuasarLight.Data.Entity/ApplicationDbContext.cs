@@ -17,7 +17,7 @@ namespace QuasarLight.Data.Entity
             Database.SetInitializer(new CreateDatabaseIfNotExists<ApplicationDbContext>());
         }
 
-        //public DbSet<UserImage> UserImages { get; set; }
+        public DbSet<UserImage> UserImages { get; set; }
         public virtual ICollection<IdentityUserRole> UserRoles { get; private set; }
         public virtual ICollection<IdentityUserClaim> Claims { get; private set; }
         public virtual ICollection<IdentityUserLogin> Logins { get; private set; }

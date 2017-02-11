@@ -6,7 +6,6 @@ using System.Web.Security;
 using Microsoft.AspNet.Identity;
 using QuasarLight.Data.Model.DataModel;
 using QuasarLight.Data.Model.ViewModel;
-using QuasarLight.UI.Models;
 using Microsoft.AspNet.Identity.Owin;
 
 namespace QuasarLight.UI.Controllers
@@ -61,10 +60,12 @@ namespace QuasarLight.UI.Controllers
                     Email = model.Email,
                     Name = model.Name,
                     LastName = model.LastName,
-                    TokenValidTo = DateTime.Today.Add(TimeSpan.FromDays(10))
+                    //PasswordHash = 
+                    TokenValidTo = DateTime.Today.Add(TimeSpan.FromDays(100))
                 };
 
                 var result = await UserManager.CreateAsync(user, model.Password);
+                //var result = await UserManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
@@ -93,32 +94,57 @@ namespace QuasarLight.UI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Login(AuthorizeViewModel model)
+        public async Task<ActionResult> Login(AuthorizeViewModel model, string returnUrl)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValidField("Email") || !ModelState.IsValidField("Password"))
+            {
                 return View(model);
-            var teacher = Authenticate(model.Email, model.Password);
+            }
 
-            if (teacher == null)
-                return View(model);
+            var a = UserManager.Users;
+            // This doesn't count login failures towards account lockout
+            // To enable password failures to trigger account lockout, change to shouldLockout: true
+            //var result1 = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var user = UserManager.FindByEmail(model.Email);
+            var result = await SignInManager.PasswordSignInAsync(user.UserName, model.Password, model.RememberMe, shouldLockout: false);
+            switch (result)
+            {
+                case SignInStatus.Success:
+                    return RedirectToLocal(returnUrl);
+                case SignInStatus.LockedOut:
+                    return View("Lockout");
+                case SignInStatus.RequiresVerification:
+                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+                case SignInStatus.Failure:
+                default:
+                    ModelState.AddModelError("", "Invalid login attempt.");
+                    return View(model);
+            }
+            //if (!ModelState.IsValid)
+            //    return View(model);
+            //var teacher = Authenticate(model.Email, model.Password);
 
-            var ticket = new FormsAuthenticationTicket(1,
-                teacher.Name,
-                DateTime.Now, 
-                DateTime.Now.AddMinutes(30),
-                true,
-                teacher.Email,
-                FormsAuthentication.FormsCookiePath);
+            //if (teacher == null)
+            //    return View(model);
 
-            var encTicket = FormsAuthentication.Encrypt(ticket);
+            //var ticket = new FormsAuthenticationTicket(1,
+            //    teacher.Name,
+            //    DateTime.Now, 
+            //    DateTime.Now.AddMinutes(30),
+            //    true,
+            //    teacher.Email,
+            //    FormsAuthentication.FormsCookiePath);
 
-            Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+            //var encTicket = FormsAuthentication.Encrypt(ticket);
 
-            return /*teacher.IsAdmin == true ? RedirectToAction("Administration", "Admin") :*/ RedirectToAction("Index", "Home");
+            //Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, encTicket));
+
+            //return /*teacher.IsAdmin == true ? RedirectToAction("Administration", "Admin") :*/ RedirectToAction("Index", "Home");
         }
 
         public ActionResult LogOff()
         {
+            //SignInManager.
             Response.Cookies.Add(new HttpCookie(FormsAuthentication.FormsCookieName, ""));
             return RedirectToAction("Index", "Home");
         }
@@ -127,20 +153,13 @@ namespace QuasarLight.UI.Controllers
         {
             var user = new User();
             return user;
-            /*var teacher = dispatcher.Query(new GetEntitiesQuery<User>()).Find(r => r.Email == name);
-            
+            /*//user = UserManager.Users
+            var teacher = dispatcher.Query(new GetEntitiesQuery<User>()).Find(r => r.Email == name);
+
             if (teacher == null)
                 return null;
 
             return Crypto.VerifyHashedPassword(teacher.Password, password) ? teacher : null;*/
-        }
-
-        private void AddErrors(IdentityResult result)
-        {
-            foreach (var error in result.Errors)
-            {
-                ModelState.AddModelError("", error);
-            }
         }
 
         [AllowAnonymous]
@@ -181,6 +200,23 @@ namespace QuasarLight.UI.Controllers
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
+        }
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError("", error);
+            }
+        }
+
+        private ActionResult RedirectToLocal(string returnUrl)
+        {
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            return RedirectToAction("Index", "Home");
         }
 
     }

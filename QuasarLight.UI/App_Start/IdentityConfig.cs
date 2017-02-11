@@ -80,9 +80,12 @@ namespace QuasarLight.UI
             {
                 manager.UserTokenProvider = 
                     new DataProtectorTokenProvider<User>(dataProtectionProvider.Create("ASP.NET Identity"));
+                //manager.Store.CreateAsync(manager.)
             }
             return manager;
         }
+
+
     }
 
     // Configure the application sign-in manager which is used in this application.

@@ -4,6 +4,7 @@ namespace QuasarLight.Data.Model.DataModel
 {
     public class Order
     {
+        public string Id { get; set; }
         public string UserId { get; set; }
         public string TotalPrice { get; set; }
         public int DeliveryType { get; set; }

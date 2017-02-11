@@ -1,4 +1,5 @@
-﻿@model QuasarLight.Data.Model.ViewModel.AuthorizeViewModel
+﻿@using QuasarLight.Data.Model.ViewModel
+@model AuthorizeViewModel
 @{
     Layout = "../Shared/_Layout.cshtml";
 }
@@ -8,8 +9,7 @@
     <title>Quasar Light Ассортимент</title>
 }
 
-
-<h2>@ViewBag.Title.</h2>
+@*<h2>@ViewBag.Title</h2>*@
 @*<div class="row">
         <div class="col-md-8">
             <section id="loginForm">
@@ -62,13 +62,15 @@
             </section>
         </div>
     </div>*@
-<img src="~/Content/img/backgrounds/login_full_bg-blur.jpg" alt="Login Full Background" class="full-bg login-img animation-pulseSlow">
+<div id="login-background">
+    <img src="~/Content/img/backgrounds/login_full_bg-blur.jpg" alt="Login Full Background" class="full-bg login-img animation-pulseSlow">
+</div>
 <!-- END Login Full Background -->
 <!-- Login Container -->
 <div id="login-container" class="animation-fadeIn">
     <!-- Login Title -->
     <div class="login-title text-center">
-        <h1>@*<i class="gi gi-flash"></i>*@ <strong>Ridersbook</strong><br><small>Пожалуйста, <strong>Войдите</strong> или <strong>Зарегистрируйтесь</strong></small></h1>
+        <h1>@*<i class="gi gi-flash"></i>*@ <strong>QUASAR LIGHT</strong><br><small>Пожалуйста, <strong>Войдите</strong> или <strong>Зарегистрируйтесь</strong></small></h1>
     </div>
     <!-- END Login Title -->
     <!-- Login Block -->
@@ -86,16 +88,16 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon icon-auth"><i class="gi gi-asterisk"></i></span>
-                        @*<input type="password" id="login-password" name="login-password" class="form-control input-lg" placeholder="Пароль">*@
-                        @Html.EditorFor(m => m.Password, new { htmlAttributes = new { id = "login-password", @class = "form-control input-lg", placeholder = "Пароль" } })
-                        @Html.ValidationMessageFor(model => model.Password)
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon icon-auth"><i class="gi gi-asterisk"></i></span>
+                            @*<input type="password" id="login-password" name="login-password" class="form-control input-lg" placeholder="Пароль">*@
+                            @Html.EditorFor(m => m.Password, new { htmlAttributes = new { id = "login-password", @class = "form-control input-lg", placeholder = "Пароль" } })
+                            @Html.ValidationMessageFor(model => model.Password)
+                        </div>
                     </div>
                 </div>
-            </div>
                 <div class="form-group form-actions">
                     <div class="col-xs-4">
                         <label class="switch switch-primary" data-toggle="tooltip" title="Запомнить?">
@@ -130,11 +132,11 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group form-actions">
-                <div class="col-xs-12 text-right">
-                    <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Сбросить пароль</button>
+                <div class="form-group form-actions">
+                    <div class="col-xs-12 text-right">
+                        <button type="submit" class="btn btn-sm btn-primary"><i class="fa fa-angle-right"></i> Сбросить пароль</button>
+                    </div>
                 </div>
-            </div>
                 <div class="form-group">
                     <div class="col-xs-12 text-center">
                         <small>Вспомнили пароль?</small> <a href="javascript:void(0)" id="link-reminder"><small>Войти</small></a>
@@ -144,7 +146,7 @@
         <!-- END Reminder Form -->
         <!-- Register Form -->
         @using (Html.BeginForm("Register", "Account", new { ViewBag.ReturnUrl }, FormMethod.Post, new { id = "form-register", @class = "form-horizontal form-bordered form-control-borderless display-none", role = "form" }))
-        {
+            {
             @Html.AntiForgeryToken()
             <div class="form-group">
                 <div class="col-xs-6">
@@ -161,15 +163,15 @@
                     @Html.ValidationMessageFor(model => model.LastName)
                 </div>
             </div>
-            <div class="form-group">
-                <div class="col-xs-12">
-                    <div class="input-group">
-                        <span class="input-group-addon"><i class="gi gi-user"></i></span>
-                        @Html.EditorFor(m => m.Login, new { htmlAttributes = new { id = "register-login", @class = "form-control input-lg", placeholder = "Логин" } })
-                        @Html.ValidationMessageFor(model => model.Login)
+                <div class="form-group">
+                    <div class="col-xs-12">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="gi gi-user"></i></span>
+                            @Html.EditorFor(m => m.Login, new { htmlAttributes = new { id = "register-login", @class = "form-control input-lg", placeholder = "Логин" } })
+                            @Html.ValidationMessageFor(model => model.Login)
+                        </div>
                     </div>
                 </div>
-            </div>
                 <div class="form-group">
                     <div class="col-xs-12">
                         <div class="input-group">
@@ -250,8 +252,11 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/login")
     <script>
+        $(document).ready(function() {
+            $("footer").addClass("hidden");
+        });
         $(function () { Login.init(); });
-        function triggerChange(){
+        function triggerChange() {
             $("#register-terms").trigger("change");
         }
 

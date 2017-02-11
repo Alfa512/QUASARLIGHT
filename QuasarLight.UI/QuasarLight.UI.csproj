@@ -251,6 +251,9 @@
     <Content Include="Content\images\products\quasar-3.jpg" />
     <Content Include="Content\images\products\quasar-4.jpg" />
     <Content Include="Content\images\products\quasar.jpg" />
+    <Content Include="Content\img\backgrounds\404_background-min.jpg" />
+    <Content Include="Content\img\backgrounds\500_background-min.JPG" />
+    <Content Include="Content\img\backgrounds\login_full_bg-blur.jpg" />
     <Content Include="Content\img\bar-orig.jpg" />
     <Content Include="Content\img\bar.jpg" />
     <Content Include="Content\img\bg-blog.jpg" />
@@ -358,6 +361,7 @@
     <Content Include="Content\img\spec-eng-min.jpg" />
     <Content Include="Content\img\veselyie-studentyi-gay-students-min.jpg" />
     <Content Include="Content\img\zhako-popugay-ptica.jpg" />
+    <Content Include="Content\main-s.css" />
     <Content Include="Content\main.css" />
     <Content Include="Content\payment-email.css" />
     <Content Include="Content\plugins.css" />
@@ -374,6 +378,7 @@
     <Content Include="Scripts\jquery.localScroll.js" />
     <Content Include="Scripts\jquery.nicescroll.min.js" />
     <Content Include="Scripts\pages\about.js" />
+    <Content Include="Scripts\pages\login.js" />
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\yandex.watch.js" />
     <Content Include="Web.config">

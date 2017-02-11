@@ -8,10 +8,11 @@ namespace QuasarLight.UI
         {
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/bootstrap.min.css",
+                      //"~/Content/bootstrap.min.css",
                       "~/Content/animate.css",
-                      "~/Content/main.css",
                       "~/Content/plugins.css",
+                      "~/Content/main.css",
+                      "~/Content/main-s.css",
                       "~/Content/themes.css",
                       "~/Content/site.css"
                       ));
@@ -29,6 +30,8 @@ namespace QuasarLight.UI
 
             bundles.Add(new ScriptBundle("~/bundles/ScrollToPlugin.min").Include("~/Scripts/ScrollToPlugin.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/login").Include(
+            "~/Scripts/pages/login.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));

@@ -11,8 +11,8 @@ namespace QuasarLight.Data.Model.DataModel
     {
         public string Name { get; set; }
         public string LastName { get; set; }
-        public string Email { get; set; }
-        public string PhoneNumber { get; set; }
+        public override string Email { get; set; }
+        public override string PhoneNumber { get; set; }
         public int Status { get; set; }
         public int Group { get; set; }
         public string RestorePasswordToken { get; set; }

@@ -7,11 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="HandheldFriendly" content="true">
     <meta name="author" content="">
-    @RenderSection("EnglishTags", false)
-    @RenderSection("SpanishTags", false)
-    @RenderSection("ItalianTags", false)
-    @RenderSection("FrenchTags", false)
-    @RenderSection("GermanTags", false)
     @RenderSection("Title", false)
 
     <link href="~/Content/img/favicon.png" rel="shortcut icon" type="image/x-icon" />
@@ -25,29 +20,15 @@
     <main class="cd-main-content ">
 
         @Html.Partial("_TopBar")
-        @Html.Partial("_TrialLessonMessage")
-        <input id="addTrialLessonUrl" type="hidden" value="@Url.Action("AddNewLessonTrial", "Lesson")" />
-        <input id="loadTrialLessonModalUrl" type="hidden" value="@Url.Action("TrialLessonModal", "Lesson")" />
-        <div class="modal fade trial-lesson-modal" id="trial-lesson-dialog" tabindex="-1" role="dialog">
-            <div compile="trialLessonModalContainer" name="trial-lesson-modal-container" id="trial-lesson-dialog-in" class="modal-dialog modal-w" role="document" ng-controller="validateCtrl">
-
-            </div>
-        </div>
-        <div class="modal fade teacher-info-modal" id="TeacherModal" tabindex="-1" role="dialog">
-            <div class="modal-dialog " role="document">
-                <div id="teacherModalContent" class="modal-content ">
-
-                </div>
-            </div>
-        </div>
 
         @RenderBody()
         @Html.Partial("_Footer")
         @Scripts.Render("~/bundles/layout.bottom")
+        @RenderSection("Scripts", false)
     </main>
     <noscript>
         <div>
-            <img src="https://mc.yandex.ru/watch/33702239" style="position: absolute; left: -9999px;" alt="" />
+            @*<img src="https://mc.yandex.ru/watch/33702239" style="position: absolute; left: -9999px;" alt="" />*@
         </div>
     </noscript>
 </body>
