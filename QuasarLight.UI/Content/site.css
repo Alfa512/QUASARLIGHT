@@ -6952,3 +6952,7 @@ textarea::-webkit-input-placeholder, input:-ms-input-placeholder {
         font-size: 40px;
         margin: 0;
     }
+
+    .sidebar-custom {
+        z-index: 10;
+    }

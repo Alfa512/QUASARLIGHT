@@ -17,11 +17,14 @@
 <body ng-app="dialogue-app">
     @Scripts.Render("~/bundles/layout")
 
-    <main class="cd-main-content ">
+    <main id="page-container" class="cd-main-content ">
 
         @Html.Partial("_TopBar")
-
-        @RenderBody()
+        @Html.Partial("_Sidebar")
+        <div id="body-container">
+            @RenderBody()
+        </div>
+        
         @Html.Partial("_Footer")
         @Scripts.Render("~/bundles/layout.bottom")
         @RenderSection("Scripts", false)

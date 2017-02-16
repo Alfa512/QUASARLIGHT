@@ -359,6 +359,7 @@
     <Content Include="Content\img\sp-min.jpg" />
     <Content Include="Content\img\spain.jpg" />
     <Content Include="Content\img\spec-eng-min.jpg" />
+    <Content Include="Content\img\users-icon.png" />
     <Content Include="Content\img\veselyie-studentyi-gay-students-min.jpg" />
     <Content Include="Content\img\zhako-popugay-ptica.jpg" />
     <Content Include="Content\main-s.css" />
@@ -486,6 +487,7 @@
     <Content Include="Views\Error\PageNotFound.cshtml" />
     <Content Include="Views\Error\ServerError.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
+    <Content Include="Views\Shared\_Sidebar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
