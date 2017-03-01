@@ -45,6 +45,11 @@ namespace QuasarLight.UI.Controllers
             return View();
         }*/
 
+        public ActionResult Profile()
+        {
+            return View();
+        }
+
         //
         // POST: /Account/Register
         [HttpPost]

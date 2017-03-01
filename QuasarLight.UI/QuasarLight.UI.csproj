@@ -359,6 +359,7 @@
     <Content Include="Content\img\sp-min.jpg" />
     <Content Include="Content\img\spain.jpg" />
     <Content Include="Content\img\spec-eng-min.jpg" />
+    <Content Include="Content\img\users-icon-64.png" />
     <Content Include="Content\img\users-icon.png" />
     <Content Include="Content\img\veselyie-studentyi-gay-students-min.jpg" />
     <Content Include="Content\img\zhako-popugay-ptica.jpg" />
@@ -380,6 +381,7 @@
     <Content Include="Scripts\jquery.nicescroll.min.js" />
     <Content Include="Scripts\pages\about.js" />
     <Content Include="Scripts\pages\login.js" />
+    <Content Include="Scripts\pages\readyProfile.js" />
     <Content Include="Scripts\plugins.js" />
     <Content Include="Scripts\yandex.watch.js" />
     <Content Include="Web.config">
@@ -488,6 +490,7 @@
     <Content Include="Views\Error\ServerError.cshtml" />
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Shared\_Sidebar.cshtml" />
+    <Content Include="Views\Account\Profile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Properties\Resources.resx">
